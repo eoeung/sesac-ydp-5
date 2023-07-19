@@ -41,3 +41,12 @@
 
 ### \[실습 2] 설문조사 폼 만들기
 [설문조사 폼](./images/survey.png)
+
+### \[실습 3] Table 달력 만들기
+[Table 달력](./images/calendar.png)
+
+### \[실습 4] Table 시간표 만들기
+[Table 시간표](./images/schedule.png)
+
+### \[실습 5] 카페 음료 주문 테이블 만들기
+[카페 음료 주문 테이블](./images/cafe_menu.png)
