@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>: HTML5로 문서 작성을 하겠다고 선언(Document Type의 약자) -->
+<!DOCTYPE html>
+
+<!--
+    - lang 속성: Language 설정(en: English, ko: Korean)
+    - 웹 크롤러가 이 문서는 어떤 언어로 설정되어있는지 파악할 때 사용
+-->
+<html lang="en">
+
+<!-- 메타 데이터 작성 -->
+<head>
+
+    <!-- 인코딩 방식 지정 / 인코딩: 작성한 코드를 컴퓨터가 이해할 수 있도록 변경 -->
+    <meta charset="UTF-8">
+
+    <!--
+        - 모바일이나 반응형 웹에서 인식할 수 있는 태그
+        - 반응형: 화면 크기에 따라 화면이 유동적으로 변하는 것
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 문서의 제목 -->
+    <title>HTML Start</title>
+
+</head>
+
+<!-- contents 작성: 브라우저에서 작성하고 싶은 내용 작성 -->
+<body>
+
+    <!--
+        <h1>: 제목 1 → Heading의 약자
+        Block Element이기 때문에 전체 너비 차지
+        -->
+    <h1 style="background-color: aliceblue;">Hello World!</h1>
+
+    <!-- 중첩(Nested) -->
+    <!--
+        div는 Block Element → 부모의 전체 너비를 차지함
+    -->
+    <div style="background-color: red;">
+        span의 parent
+        <!--
+            span은 Inline Element → 개행이 되지 않음
+        -->
+        <span style="background-color: blue;">div의 child</span>
+    </div>
+</body>
+</html>
