@@ -1,0 +1,151 @@
+<!--
+    ＊Emmet: 키워드로 HTML 구조를 잡아주는 것
+        1) HTML 파일을 생성한다.
+        2) !를 입력한 후 tab키를 누른다.
+        3) HTML5의 기본 구조가 완성된다
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag 종류</title>
+</head>
+<body>
+    <!-- ＊<h1~6> 태그: heading(제목) 태그 -->
+    <h1>Tag 종류에 대해 배워보자!</h1>
+    <h2>제목 2</h2>
+    <h3>제목 3</h3>
+    <h4>제목 4</h4>
+    <h5>제목 5</h5>
+    <h6>제목 6</h6>
+
+    <!-- ＊<p> 태그: paragraph(문단) 태그 -->
+    <p>여기는 본문 태그입니다!</p>
+
+    <!--
+        ＊<br> 태그: line `BR`eak의 약자
+        - Empty Element이므로 닫는 태그가 필요하지 않음
+    -->
+    <br><br>
+
+    <p>여기는 본문 태그입니다!</p>
+
+    <h1>오늘의 할 일</h1>
+    <!--
+        ＊<ul> 태그: unordered list(순서 없는 목록) 태그
+
+        - [ul에 있는 type Attribute 관련 자료] (https://www.geeksforgeeks.org/html-ul-type-attribute/)
+            → disc, circle, square 3가지가 존재한다.
+
+        - disc: 바탕색이 검게 칠해진 동그라미
+        - circle: 바탕색이 없는 흰색 동그라미
+        - square: 바탕색이 검게 칠해진 네모
+    -->
+    <ul type="circle">
+        <li>html 공부하기</li>
+        <li>운동하기</li>
+        <li>청소하기</li>
+    </ul>
+    <br><br>
+
+    <h1>아이스 카페라떼 레시피</h1>
+    <!--
+        ＊<ol> 태그: ordered list(순서 있는 목록) 태그
+
+        - ol에도 ul과 마찬가지로 type Attribute가 존재한다.
+            → 1, A, a, I, i 5가지가 존재한다.
+        
+        - 1: 숫자
+        - a: 소문자
+        - A: 대문자
+        - I: 대문자 로마자
+        - i: 소문자 로마자
+
+        - start Attribute로 시작값을 지정할 수 있음
+        
+        - reversed Attribute로 순서를 뒤집을 수 있음
+    -->
+    <ol type="1" start="4" reversed>
+        <!-- <b> 태그와 <strong> 태그는 같지만 Semantic(의미를 부여)적으로는 <strong> 태그를 사용하는 것이 좋음 -->
+        <li><strong>우유</strong>를 <em>180ml</em> 컵에 넣기</li>
+        <li><b>얼음</b>을 가득 넣기</li>
+        <!-- 마찬가지로 <i> 태그와 <em> 태그는 같지만 Semantic(의미를 부여)적으로는 <em> 태그를 사용하는 것이 좋음 -->
+        <li><i>에스프레소 샷</i>을 넣어주면</li>
+        <li><u>완성!</u> <del>맛있게 드세요!</del></li>
+    </ol>
+
+    <!-- ＊<hr> 태그: `H`o`R`izontal line(수평선) 태그 -->
+    <hr>
+
+    <!-- ＊목록 태그의 중첩 사용 -->
+    <h1>내가 좋아하는 음식</h1>
+    <ul>
+        <li>
+            양식
+            <ul>
+                <li>수제버거</li>
+                <li>파스타</li>
+            </ul>
+        </li>
+        <li>
+            한식
+            <ul>
+                <li>된장찌개</li>
+                <li>청국장</li>
+            </ul>
+        </li>
+        <li>
+            일식
+            <ul>
+                <li>초밥</li>
+                <li>우동</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <hr>
+
+    <h1>Image & Anchor</h1>
+
+    <!-- 절대 경로 -->
+    <img src="/02.html/images/polar_bear.jpg" alt="새싹 팜플렛" width="300">
+    <!-- width만 작성한 경우, height는 자동으로 맞춰줌 -->
+
+    <!-- 상대 경로 -->
+    <img src="./images/polar_bear.jpg" width="300" height="250px">
+    <!-- 현재 위치로부터 이미지를 찾아가기 때문에, 절대 경로보다는 사용하는 것을 권장하는 편이다. -->
+
+    <!-- 
+        .: 현재 위치에서 시작
+        ..: 부모 위치로 이동한 다음 시작
+     -->
+
+    <!--
+        alt 속성을 주지 않으면
+        이미지 경로가 잘못되었을 때, 화면 상에서 출력이 되지 않으므로 어떻게 된 건지 알 수가 없음
+    -->
+    <img src="">
+
+    <!-- URL로 이미지 가져오기 -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDftxA1Rr5mzwQEdjBtdocwuXXTbBbYJumw6OaZLRM5eGQETDQeLY_yG7b9LVtfEJWJ3M&usqp=CAU" alt="banana">
+
+    <hr>
+
+    <!--
+        ＊<a> 태그: Anchor(닻) 태그 → 웹 페이지 이동
+
+        - target="_self"는 default이며, 현재 화면에서 웹 페이지를 이동한다.
+        - target="_blank"는 새로운 탭에서 웹 페이지를 띄운다.
+
+        - title 속성은 링크에 마우스를 가져다 대면, 설정한 값이 화면에 출력된다.
+    -->
+    <a href="https://www.naver.com">Naver로 이동하기 (default → target="_self")</a><br>
+    <a href="https://www.naver.com" target="_blank">Naver로 이동하기 (target="_blank")</a><br>
+    <a href="https://www.google.com" target="_blank" title="마우스 커서를 올리면 나타남">Google로 이동하기 (target="_blank")</a> <br>
+
+    <!-- <a> 태그는 인터넷상의 주소 뿐 아니라, 다른 html문서로도 이동이 가능하다. -->
+    <a href="./html-start.html">html-start파일로 이동하기</a>
+</body>
+</html>
