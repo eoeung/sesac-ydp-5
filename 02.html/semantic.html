@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Tag</title>
+</head>
+<body>
+    <!-- Semantic 적용 전 -->
+
+    <!-- <div style="height: 50px; background: pink">Header</div>
+    <div style="height: 1000px; background: skyblue; display: flex">
+      <div style="background: orange; width: 80%">
+        Section
+        <div style="background: lime; height: 100px">Article</div>
+        <div style="background: darkgray; height: 100px">Article</div>
+        <div style="background: lime; height: 100px">Article</div>
+        <div style="background: darkgray; height: 100px">Article</div>
+      </div>
+      <div style="background: royalblue; width: 20%">Aside</div>
+    </div>
+    <div style="height: 50px; background: palegreen">Footer</div> -->
+
+    <!-- Semantic 적용 후 -->
+
+    <!-- header -->
+    <!-- ＊header: 회사 로고, 메뉴 등 모음 -->
+    <header style="height: 50px; background: pink">Header</header>
+    <!-- // header -->
+    
+    <!-- main -->
+    <!-- ＊main: 하나의 html문서에 하나의 main을 권장, 주 컨텐츠 영역 -->
+    <main style="height: 1000px; background: skyblue; display: flex">
+
+        <!-- section -->
+        <!--
+            ＊section: article 모음
+            ＊article: 하나의 컨텐츠
+        -->
+        <section style="background: orange; width: 80%">Section
+            <!-- article 1 -->
+            <article style="background: lime; height: 100px">Article</article>
+            <!-- // article 1 -->
+
+            <!-- article 2 -->
+            <article style="background: darkgray; height: 100px">Article</article>
+            <!-- // article 2 -->
+
+            <!-- article 3 -->
+            <article style="background: lime; height: 100px">Article</article>
+            <!-- // article 3 -->
+
+            <!-- article 4 -->
+            <article style="background: darkgray; height: 100px">Article</article>
+            <!-- // article 4 -->
+
+        </section>
+        <!-- // section -->
+
+        <!-- aside -->
+        <!-- ＊aside: 사이드에 위치하여 광고, 메뉴 등으로 구성 -->
+        <aside style="background: royalblue; width: 20%">Aside</aside>
+        <!-- // aside -->
+
+    </main>
+    <!-- // main -->
+
+    <!-- footer -->
+    <!-- ＊footer: 사이트 가장 아래에 위치하여 저작권 정보, 법령, 회사 정보 등을 기입 -->
+    <footer style="height: 50px; background: palegreen">Footer</footer>
+    <!-- // footer -->
+</body>
+</html>
