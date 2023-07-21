@@ -1,0 +1,16 @@
+/* 속성 선택자 (Attribute selector) */
+
+/* disabled 속성이 있는 경우 적용 */
+[disabled]{
+    background-color: red;
+}
+
+/* placeholder 속성이 있고, 속성값이 `이름`인 경우 적용 */
+[placeholder="이름"]{
+    background-color: orange;
+}
+
+/* placeholder 속성이 없는 경우 적용 */
+input:not([placeholder]){
+    background-color: blue;
+}
