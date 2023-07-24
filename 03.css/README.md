@@ -80,7 +80,13 @@
     - rotate(회전)
     - translate(이동)
     - scale(확대축소)
-
+- display
+    - inline
+    - block
+    - inline-block
+    - flex
+- animation
+    - @keyframes
 
 ### \[실습 1-1] CSS로 무지개 만들기
 [CSS로 무지개 만들기](./images/rainbow.png)
