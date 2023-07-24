@@ -1,0 +1,47 @@
+/* 
+    [Selector - 단일 선택자]
+        1) *: 전체 선택자(Universal Selector)
+        2) 태그명: 태그 선택자(Type Selector)
+        3) .class 속성값: class 선택자(Class Selector)
+        4) #id 속성값: id 선택자(ID Selector)
+
+    Ex)
+        1) 전체 선택자: *{...}
+        2) 태그 선택자: li{...}
+        1) class 선택자: .ABC{...}
+        1) id 선택자: #ABC{...}
+*/
+
+/* 전체 선택자 */
+*{
+    color: navy;
+}
+
+/* 태그 선택자 */
+h1{
+    background-color: pink;
+}
+
+/* Class 선택자 */
+.second{
+    background-color: aquamarine;
+}
+
+/* ID 선택자 */
+#first{
+    background-color: lightgreen;
+}
+
+/*
+    [class와 id의 차이]
+    - class: 그룹
+    - id: 고유
+*/
+
+.small{
+    font-size: 10px;
+}
+
+.big{
+    font-size: 20px;
+}

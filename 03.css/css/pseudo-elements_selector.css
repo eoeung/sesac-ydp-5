@@ -1,0 +1,23 @@
+/* 가상 요소 선택자 (pseudo-element selector) */
+
+/*
+    ABC::before
+    - 선택자 ABC 요소의 내부 앞에 content를 삽입
+    - content속성을 사용하며, 무조건 값이 있어야 함
+*/
+.box::before{
+    content: '택시~';
+    font-weight: bold;
+    color: red;
+}
+
+/*
+    ABC::after
+    - 선택자 ABC 요소의 내부 뒤에 content를 삽입
+    - content속성을 사용하며, 무조건 값이 있어야 함
+*/
+.box::after{
+    content: '빨리!!';
+    font-weight: bold;
+    color: blue !important;
+}

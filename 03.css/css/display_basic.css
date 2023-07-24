@@ -1,0 +1,55 @@
+.d-inline1{
+    background-color: blue;
+    display: inline;
+}
+
+.d-inline2{
+    background-color: red;
+    display: inline;
+}
+
+.d-block1{
+    background-color: blue;
+    display: block;
+    width: 500px;
+}
+
+.d-block2{
+    background-color: red;
+    display: block;
+    width: 400px;
+}
+
+.d-inline-block1{
+    background-color: blue;
+    display: inline-block;
+}
+
+.d-inline-block2{
+    background-color: red;
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    /* margin: 20px; */
+    /*
+        ＊단축 프로퍼티
+        상 우 하 좌 → 시계 방향이라고 생각하면 됨 아래의 두 코드는 모두 동일한 기능을 하는 코드임
+    */
+    /* margin: 20px 40px 20px 40px; */
+    margin: 20px 40px;
+}
+
+.d-none{
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+.box{
+    background-color: violet;
+    width: 100px;
+    height: 100px;
+    /* visibility: visible; */
+    visibility: hidden;
+}
