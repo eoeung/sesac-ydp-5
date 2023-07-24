@@ -16,7 +16,7 @@
         - 전체 선택자: (*)
         - 태그 선택자: (태그명)
         - class 선택자: (.class속성값)
-        - id 선택자: (.id속성값)
+        - id 선택자: (#id속성값)
     - 다중(복합) 선택자
         - 하위(후손) 선택자(Descendant Combinator): (  → one space)
         - 자식 선택자(Child Combinator): (>)
