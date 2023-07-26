@@ -73,24 +73,24 @@
 
 ### \[실습 1] 나를 소개하는 Object 만들기
 
-[나를 소개하는 Object 만들기](../js/training1_object.js)
+[나를 소개하는 Object 만들기](./js/training1_object.js)
 
 ### \[실습 2] 형변환 실습
 
-[형변환 실습](../js/training2_type-conversion.js)
+[형변환 실습](./js/training2_type-conversion.js)
 
 ### \[실습 3] multifly() 함수 만들기
 
-[multifly() 함수 만들기](../js/training3_function_multifly.js)
+[multifly() 함수 만들기](./js/training3_function_multifly.js)
 
 ### \[실습 4] square() 함수 만들기
 
-[square() 함수 만들기](../js/training4_function_square.js)
+[square() 함수 만들기](./js/training4_function_square.js)
 
 ### \[실습 5] if문 실습
 
-[if문 실습](../js/training5_condition.js)
+[if문 실습](./js/training5_condition.js)
 
 ### \[실습 6] 지금은 오전? 오후!?
 
-[지금은 오전? 오후!?](../js/training6_conditional_operator.js)
+[지금은 오전? 오후!?](./js/training6_conditional_operator.js)
