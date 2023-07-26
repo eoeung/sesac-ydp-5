@@ -23,7 +23,7 @@
     - number
     - boolean
     - undefined
-    - null<br>
+    - null<br><br>
       > console.log(typeof null)을 하게 되면 object라고 나오는데, 언어 자체 오류라고 보면 됨
     - symbol
     - bigint
@@ -94,3 +94,15 @@
 ### \[실습 6] 지금은 오전? 오후!?
 
 [지금은 오전? 오후!?](./js/training6_conditional_operator.js)
+
+### \[실습 7] 합계 구하기
+
+[합계 구하기](./js/training7_sum.js)
+
+### \[실습 8] 13의 배수이자 홀수를 찾아보자
+
+[13의 배수이자 홀수를 찾아보자](./js/training8_thirteen.js)
+
+### \[실습 9] 구구단 만들기
+
+[구구단 만들기](./js/training9_multiplication-table.js)
