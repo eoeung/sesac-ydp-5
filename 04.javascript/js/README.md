@@ -39,6 +39,6 @@
 
 [나를 소개하는 Object 만들기](../04.javascript/js/training1_object.js)
 
-### \[실습 2] 나를 소개하는 Object 만들기
+### \[실습 2] 형변환 실습
 
-[나를 소개하는 Object 만들기](../04.javascript/js/training1_object.js)
+[형변환 실습](../04.javascript/js/training2_type-conversion.js)
