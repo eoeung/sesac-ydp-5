@@ -1,4 +1,4 @@
-# 4일차 (2023/07/24 ~ ing)
+# 4일차 (2023/07/24 ~ 28)
 
 ## [Javascript 기본]
 
@@ -62,12 +62,18 @@
   - 삼항 연산자(Conditional Operator)
 - 반복문
   - for
+    - 기본 for문
+    - for ... of
+    - forEach()
+      - return값이 없음
+    - for ... in
   - while
   - break, continue
 - 내장 메서드
   - 문자열 내장 메서드
   - 배열 내장 메서드
 - 메서드 체이닝(method chaining)
+- map(), filter(), find()
 
 ---
 
