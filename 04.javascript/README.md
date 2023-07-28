@@ -74,9 +74,21 @@
   - 배열 내장 메서드
 - 메서드 체이닝(method chaining)
 - map(), filter(), find()
+- pass by value / pass by reference
 - 표준 내장 객체
   - Date
   - Math
+- DOM
+  - getElementById
+  - getElementsByClassName
+  - getElementsByTagName
+  - getElementsByName
+  - querySelector
+  - querySelectorAll
+- 유사 배열
+  - HTMLCollection
+  - NodeList
+  - Array.from()
 ---
 
 ### \[실습 1] 나를 소개하는 Object 만들기
