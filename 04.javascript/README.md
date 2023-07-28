@@ -74,7 +74,9 @@
   - 배열 내장 메서드
 - 메서드 체이닝(method chaining)
 - map(), filter(), find()
-
+- 표준 내장 객체
+  - Date
+  - Math
 ---
 
 ### \[실습 1] 나를 소개하는 Object 만들기
