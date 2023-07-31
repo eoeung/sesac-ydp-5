@@ -22,9 +22,11 @@
   > (Ex. ```width: calc(var(--size) * 25);```)
 - Media Query (@media)
 - Bootstrap
-  - Docs로 적용하고 싶은 부분 적용해보기
-  - 
-  - 
+  - CDN (Content Delivery Network)
+  - 공식 문서를 활용해서 적용하고 싶은 부분 적용해보기
+  - Component
+  - Utilities
+  - Grid System
 ---
 
   ### \[실습 1] 미디어 쿼리 사용하기
