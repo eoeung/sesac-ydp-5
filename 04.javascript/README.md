@@ -166,3 +166,11 @@
 ### \[실습 9] 구구단 만들기
 
 [구구단 만들기](./js/training9_multiplication-table.js)
+
+### \[실습 10] 간단 계산기 만들기
+
+[간단 계산기 만들기](./js/training10_calculator.js)
+
+### \[실습 11] 방명록 만들기
+
+[방명록 만들기](./js/training11_guest-book.js)
