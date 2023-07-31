@@ -9,7 +9,7 @@
     방명록입니다.<br />
 
     <form id="guestForm">
-      <table>
+      <table id="guestTable">
         <tr>
           <th>작성자</th>
           <td>
@@ -28,8 +28,17 @@
       <input type="submit" id="go" value="작성" />
       
     </form>
+    
+    <br><br>
 
-    <table id="guest_book"></table>
+    <table id="guestBook">
+      <tr>
+        <th class="guestBookTitle">번호</th>
+        <th class="guestBookTitle">작성자</th>
+        <th class="guestBookTitle">내용</th>
+        <th class="guestBookTitle">작성일</th>
+      </tr>
+    </table>
 
     <script src="../js/training11_guest-book.js"></script>
   </body>
