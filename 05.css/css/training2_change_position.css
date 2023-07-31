@@ -1,0 +1,29 @@
+.main{
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+}
+.baby{
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+@media (min-width: 700px){
+    .main{
+        flex-direction: row;
+    }
+    .baby{
+        background-color: #000;
+    }
+}
+
+@media (max-width: 700px){
+    .main{
+        flex-direction: column;
+    }
+    .baby{
+        background-color: skyblue;
+    }
+}

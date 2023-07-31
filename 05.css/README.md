@@ -20,3 +20,17 @@
   > (Ex. ```--size: 8px; padding: var(--size);```)
   5. calc()함수를 사용해서 계산도 할 수 있음
   > (Ex. ```width: calc(var(--size) * 25);```)
+
+---
+
+  ### \[실습 1] 미디어 쿼리 사용하기
+
+[미디어 쿼리 사용하기](./videos/mediaQuery.mp4)
+
+### \[실습 2] 크기에 따라 자리 바꾸기
+
+[크기에 따라 자리 바꾸기](./videos/change_position.mp4)
+
+### \[실습 3] header 만들기
+
+[header 만들기](./images/ward.png)
