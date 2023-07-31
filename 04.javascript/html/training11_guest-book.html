@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[실습 11] 방명록 만들기</title>
+  </head>
+  <body>
+    방명록입니다.<br />
+
+    <form id="guestForm">
+      <table>
+        <tr>
+          <th>작성자</th>
+          <td>
+            <input type="text" id="guest" />
+          </td>
+        </tr>
+        <tr>
+          <th>내용</th>
+          <td>
+            <input type="text" id="content" />
+          </td>
+        </tr>
+      </table>
+
+      <br />
+      <input type="submit" id="go" value="작성" />
+      
+    </form>
+
+    <table id="guest_book"></table>
+
+    <script src="../js/training11_guest-book.js"></script>
+  </body>
+</html>
