@@ -1,0 +1,23 @@
+.box{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: antiquewhite;
+}
+
+.my_center{
+    width: 300px;
+    background-color: sienna;
+}
+
+.my_width{
+    background-color: gold;
+}
+
+.w-30{
+    width: 30%;
+}
+
+.my_height{
+    background-color: silver;
+}
