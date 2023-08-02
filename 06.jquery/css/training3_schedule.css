@@ -1,0 +1,45 @@
+div.flex{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+div.content{
+    margin-top: 30px;
+    margin-bottom: 100px;
+    text-align: center;
+    line-height: 2rem;
+}
+
+table.t{
+    width: 100%;
+}
+table.t > caption{
+    padding-bottom: 50px;
+}
+table.t > * > tr > th:first-child,
+table.t > * > tr > td:first-child{
+    color: red;
+}
+table.t > * > tr > th:last-child,
+table.t > * > tr > td:last-child{
+    color: blue;
+}
+table.t > * > tr > th,
+table.t > * > tr > td{
+    padding: 20px;
+}
+table.t > * > tr > td.day{
+    cursor: pointer;
+}
+
+caption.tc{
+    font-size: 40px;
+    font-weight: bold;
+    color: green;
+}
+p{
+    margin: 0;
+}

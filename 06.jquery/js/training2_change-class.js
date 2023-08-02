@@ -1,3 +1,5 @@
+// [실습 2] 클래스 바꾸기
+
 // TODO: 조건을 만족하는 jquery 코드 작성
 // .bg-red 클래스 있다면, .bg-red 제거, .bg-orange 추가
 // .bg-orange 클래스 있다면, .bg-orange 제거, .bg-yellow 추가
