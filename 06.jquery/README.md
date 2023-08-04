@@ -2,6 +2,7 @@
 
 ## [jQuery]
 
+- CDN
 - jQuery
   - \$() → $(css 선택자)
   - $(this)
