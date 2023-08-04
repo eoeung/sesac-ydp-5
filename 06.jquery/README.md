@@ -20,27 +20,52 @@
     - after()
   - 요소 삭제
     - remove()
-    - empty()
-      - Element.innerText = ''
+    - empty() <br>
+      > ※ Javascript에서는 다음과 같이 사용 <br>
+      ```Element.innerText = ''```
   - 요소 찾기
-    - parent()
-      - Element.parentNodes
-      - Element.parentElement
-    - next()
-      - Element.nextElementSibling
-    - prev()
-      - Element.previousElementSibling
-    - children()
-      - Element.children
+    - 부모 요소
+      - jQuery
+        - ```parent()```
+      - js 
+        - ```Element.parentNodes``` <br>
+        - ```Element.parentElement```
+    - 다음 **형제** 요소
+      - jQuery
+        - ```next()```
+      - js
+        - ```Element.nextElementSibling```
+    - 이전 **형제** 요소
+      - jQuery
+        - ```prev()```
+      - js
+        - ```Element.previousElementSibling```
+    - 부모 요소
+      - jQuery
+        - ```children()```
+      - js 
+        - ```Element.children```
 - 클래스 조작하기
-  - addClass()
-    - classList.add()
-  - removeClass()
-    - classList.remove()
-  - hasClass()
-    - classList.contains()
-  - toggleClass()
-    - classList.toggle()
+  - 클래스 추가
+    - jQuery
+      - ```addClass()```
+    - js
+      - ```classList.add()```
+  - 클래스 삭제
+    - jQuery
+      - ```removeClass()```
+    - js
+      - ```classList.remove()```
+  - 클래스 포함하고 있는지 확인
+    - jQuery
+      - ```hasClass()```
+    - js
+      - ```classList.contains()```
+  - 클래스 토글
+    - jQuery
+      - ```toggleClass()```
+    - js
+      - ```classList.toggle()```
 - event
   - ready
     - jQuery
