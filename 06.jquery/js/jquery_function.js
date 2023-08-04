@@ -33,7 +33,7 @@ function changeCssJquery() {
   //   $('span').css('color', 'blue');
   $('span').css({
     'font-size': '40px',
-    color: 'blue',
+    'color': 'blue',
   });
 }
 
