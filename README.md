@@ -19,4 +19,4 @@
 |23/07/31|CSS|[이동](./05.css/)|
 |23/08/02|Javascript|[이동](./06.jquery/)|
 |23/08/04|Javascript|Quiz 진행|
-|23/08/07|Server, <br>Node.js|[Node.js 이동](./08.nodejs/)|
+|23/08/07, <br> 23/08/09|Server, <br>Node.js|[Node.js 이동](./08.nodejs/)|
