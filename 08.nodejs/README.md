@@ -36,6 +36,7 @@
 	- 객체
 	- 배열
 - npm (Node Package Manager)
+  - npm init
 - Node.js로 Web Server 구축
   - http
   - express
@@ -43,3 +44,4 @@
 	- Header
 	- Body
 - try-catch
+- EJS template (Embedded JavaScript)
