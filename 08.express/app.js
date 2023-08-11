@@ -5,6 +5,10 @@ const PORT = 8080;
 app.set('view engine', 'ejs'); // express에서 사용할 템플릿 엔진 종류 등록
 app.set('views', './views'); // 템플릿 엔진 파일을 저장할 위치 등록
 
+// (임시) DB에서 가져온 회원 정보(id, pw)
+const idFromDB = 'banana';
+const pwFromDB = '1234qwer';
+
 // app.get(path, callback())
 // '/': 서버주소:포트번호/ → (localhost:8080/)
 app.get('/', function (request, response) {
@@ -12,7 +16,16 @@ app.get('/', function (request, response) {
   //   response.send('<h1>Hello World!</h1>');
 
   // response.render(ejs_filename): ejs file 이름을 찾아서 응답 → app.set()으로 설정해줘야 함
-  response.render('index');
+  response.render('index', {
+    userId: idFromDB,
+    userPw: pwFromDB,
+    btns: ['버튼1', '버튼2', '버튼3'],
+    me: {
+      name: 'eoeung',
+      msg: 'Hello World!',
+    },
+    isLogin: true,
+  });
 });
 
 // '/sesac' 경로로 들어왔을 때, "새싹 영등포캠퍼스 5기 수업중" 메시지 보이기

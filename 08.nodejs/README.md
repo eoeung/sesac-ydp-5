@@ -45,3 +45,10 @@
 	- Body
 - try-catch
 - EJS template (Embedded JavaScript)
+  - 문법
+    - <% %>
+    - <%= %>
+    - <%# %>
+    - <%- include(path), {...} %>
+  - Component화
+    - Header, Footer, ... (공통부분)

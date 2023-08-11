@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인 페이지</title>
+    <%- include('./includes/head', {title: 'Home'}) %>
 </head>
 <body>
+    <%- include('./includes/header')  %>
     <h1>Hello! Express!!</h1>
-    <p>안녕하세요~~</p>
+    <p>안녕하세요~~ <%= userId %>님 환영합니다! </p>
+    <p>당신의 패스워드는 <%= userPw %>입니다! </p>
 
     <% for(let i=0; i<5; i++){ %>
         <div> <%= i %> </div>
     <% } %>
 
-    <hr>
+    <!-- 주석 처리는 #을 붙여야함 -->
+    <%# const userId = 'apple'; %>
+    <!-- <%= userId %> -->
 
-    <a href="/">Home</a>
-    <a href="/sesac">새싹</a>
-    <a href="/register">회원가입</a>
-    <a href="/login">로그인</a>
+    <% for(let i=0; i<btns.length; i++){ %>
+        <button><%= btns[i] %></button>
+    <% } %>
+
+    <br>
+
+    <span><%= me.name %></span>
+    <span><%= me.msg %></span>
+
+    <br>
+
+    <% if(!isLogin) { %>
+        <h4>아직 로그인을 하지 않으셨습니다.</h4>
+    <% } else { %>
+        <h4>로그인을 하셨습니다!</h4>
+    <% } %>
 </body>
 </html>
