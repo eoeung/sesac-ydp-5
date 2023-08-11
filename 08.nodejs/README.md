@@ -44,7 +44,7 @@
 	- Header
 	- Body
 - try-catch
-- EJS template (Embedded JavaScript)
+- EJS(Embedded JavaScript) Template
   - 문법
     - <% %>
     - <%= %>
@@ -52,3 +52,12 @@
     - <%- include(path), {...} %>
   - Component화
     - Header, Footer, ... (공통부분)
+- Template Engine
+  - 개념
+    - 문법과 설정에 따라 파일은 html 형식으로 변환시키는 모듈
+  - Node.js의 Template Engine
+    - ejs
+    - pug
+    - handlebars
+- MiddleWare
+  -  express.static()

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('./includes/head', {title: 'Home'}) %>
+
+    <!-- index.ejs에서만 적용하고 싶은 home.css -->
+    <link rel="stylesheet" href="/public/css/home.css">
 </head>
 <body>
     <%- include('./includes/header')  %>
@@ -16,8 +19,9 @@
     <% } %>
 
     <!-- 주석 처리는 #을 붙여야함 -->
-    <%# const userId = 'apple'; %>
-    <!-- <%= userId %> -->
+    <!-- 또는 /* */을 사용 -->
+    <%/* const userId = 'apple'; */%>
+    <%=/* userId */%>
 
     <% for(let i=0; i<btns.length; i++){ %>
         <button><%= btns[i] %></button>
