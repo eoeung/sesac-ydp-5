@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <style>
+        span {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        당신의 이름은 <span><%= userInfo.name %></span> 입니다.
+        <br>
+
+        당신의 성별은
+        <% if(userInfo.gender === 'male') { %>
+            <span>남자</span>
+        <% } else { %>
+            <span>여자</span>
+        <% } %> 입니다.
+        <br>
+        
+        당신의 생년월일은 <span><%=userInfo.birth_year%>/<%=userInfo.birth_month%>/<%=userInfo.birth_day%></span> 입니다.
+        <br>
+
+        당신의 관심사는
+        <% for(let i=0; i<userInfo.interest.length; i++){ %>
+            <span><%= userInfo.interest[i] %>
+                <% if(i+1 !== userInfo.interest.length){ %> / <% } %>
+            </span>
+        <% } %>
+        입니다.
+    </div>
+</body>
+</html>
