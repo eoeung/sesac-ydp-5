@@ -12,7 +12,7 @@
   - Object
 - rest
 - Class
-  - 
+---
 ### \[실습 1] 구조 분해 할당을 사용하여 값 추출
 
 [구조 분해 할당을 사용하여 값 추출](./training1_destructuring_assignment.js)

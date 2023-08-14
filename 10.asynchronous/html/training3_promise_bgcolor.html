@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[실습 3] Promise로 배경색 변경하기</title>
+  </head>
+  <body>
+    <script>
+      function bgColor(color) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            window.document.body.style.backgroundColor = color;
+            resolve();
+          }, 1000);
+        });
+      }
+
+      // 1) promise
+      bgColor('red')
+        .then(function (result) {
+          return bgColor('orange');
+        })
+        .then(function (result) {
+          return bgColor('yellow');
+        })
+        .then(function (result) {
+          return bgColor('green');
+        })
+        .then(function (result) {
+          return bgColor('blue');
+        })
+        .then(function (result) {
+          return bgColor('navy');
+        })
+        .then(function (result) {
+          return bgColor('purple');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      // 2) async-await
+      async function exec() {
+        let red = await bgColor('red');
+        let orange = await bgColor('orange');
+        let yellow = await bgColor('yellow');
+        let green = await bgColor('green');
+        let blue = await bgColor('blue');
+        let navy = await bgColor('navy');
+        let purple = await bgColor('purple');
+      }
+
+      exec();
+    </script>
+  </body>
+</html>

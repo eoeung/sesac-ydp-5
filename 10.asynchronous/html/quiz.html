@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Hell</title>
+  </head>
+  <body>
+    <h1>콜백지옥 예시</h1>
+
+    <script>
+      // 1. 1초 뒤에 <body>태그의 색상을 빨간색으로 변경 (setTimeout)
+      function bgColor(color) {
+        let body = window.document.body;
+        body.style.backgroundColor = color;
+      }
+
+        setTimeout(function () {
+          bgColor('red');
+
+          setTimeout(function () {
+            bgColor('orange');
+
+            setTimeout(function () {
+              bgColor('yellow');
+
+              setTimeout(function () {
+                bgColor('green');
+
+                setTimeout(function () {
+                  bgColor('blue');
+
+                  setTimeout(function () {
+                    bgColor('navy');
+
+                    setTimeout(function () {
+                      bgColor('purple');
+                    }, 1000);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+
+      // 2. 1초 뒤에 <body>태그의 색상을 무지개 순서대로 변경
+    </script>
+  </body>
+</html>
