@@ -22,4 +22,4 @@
 |23/08/07, <br> 23/08/09, <br> 23/08/11|Server, <br>Node.js|[Node.js 이동](./08.nodejs/)|
 |23/08/11|Javascript 고급|[이동](./09.javascript-advanced/)|
 |23/08/14|비동기처리<br> Form|[비동기처리 이동](./10.asynchronous/) <br> [Form 이동](./11.form/)|
-|23/08/17|<td colspan="2">결석</td>|
+|23/08/17 <td colspan="2">결석</td>|
