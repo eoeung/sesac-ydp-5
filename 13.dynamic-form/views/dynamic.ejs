@@ -58,12 +58,30 @@
       <button type="button" onClick="fetchPost();">Fetch Post 제출</button>
     </form>
 
+    <hr />
+    <hr />
+    <hr />
+
+    <h1>open API를 이용해 고양이 사진 랜덤 돌리기!</h1>
+    <button onclick="changeImg();">랜덤</button>
+
+    <br><br>
+
+    <img
+      src="https://i1.sndcdn.com/avatars-000349784990-sl1e1v-t500x500.jpg"
+      alt="랜덤박스"
+      title="랜덤박스"
+      width="500"
+      height="500"
+    />
+
     <!-- 동적 폼 전송 결과를 보여줄 곳 -->
     <div class="result"></div>
 
     <script>
       // frontend javascript
       const resultBox = document.querySelector('div.result');
+      const img = document.querySelector('img');
 
       /////////// Ajax ///////////
       function ajaxGet() {
@@ -321,15 +339,28 @@
           body: JSON.stringify(data),
           // data: Javascript object
           // JSON.stringify(data): Js Obj → json
-        }).then((response) => {
-          console.log(response);
-          return response.json();
-        }).then(data => {
-          console.log(data);
+        })
+          .then((response) => {
+            console.log(response);
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
 
-          const { name, gender } = data;
+            const { name, gender } = data;
             resultBox.textContent = `POST /fetch 요청 완료!! ${name}님은 ${gender}이시죠?ㅎㅎ`;
+          });
+      }
+
+      async function changeImg() {
+        const response = await axios({
+          method: 'get',
+          url: 'https://api.thecatapi.com/v1/images/search',
         });
+
+        console.log(response);
+        const { data } = response;
+        img.src = data[0].url;
       }
     </script>
   </body>
