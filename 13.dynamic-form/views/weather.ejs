@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[선택 실습] weather open API</title>
+
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+      h3 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather open API</h1>
+    <h3>3초마다 API 호출 중...</h3>
+    <div></div>
+
+    <script>
+      const div = document.querySelector('div');
+      const p1 = document.createElement('p');
+      const p2 = document.createElement('p');
+      const p3 = document.createElement('p');
+      const p4 = document.createElement('p');
+
+      async function weather() {
+        const data = {
+          lat: '37.517666',
+          lon: '126.886406',
+          APIKey: '66f38aaff252dafee118632705fe0959',
+        };
+
+        try {
+          const response = await axios({
+            method: 'get',
+            url: `https://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&appid=${data.APIKey}`,
+          });
+
+          console.log(response.data);
+          const resData = response.data;
+          p1.textContent = `새싹 영등포캠퍼스의 위도는 ${resData.coord.lat} 입니다.`;
+          p2.textContent = `새싹 영등포캠퍼스의 경도는 ${resData.coord.lon} 입니다.`;
+          p3.textContent = `현재 새싹 영등포캠퍼스의 온도는 ${
+            resData.main.temp - 273.15
+          }℃ 입니다.`;
+          p4.textContent = `현재 새싹 영등포캠퍼스의 습도는 ${resData.main.humidity}% 입니다.`;
+
+          div.append(p1);
+          div.append(p2);
+          div.append(p3);
+          div.append(p4);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      setInterval(weather, 5000);
+    </script>
+  </body>
+</html>
