@@ -28,6 +28,7 @@ const uploadDetail = multer({
 
 app.set('view engine', 'ejs');
 app.set('/views', 'view');
+app.use('/userUpload', express.static(__dirname + '/uploads'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -73,13 +74,20 @@ app.post('/upload/array', uploadDetail.array('userfiles'), (req, res) => {
 // fields() 매개 변수로 input 태그의 name을 각각 넣기
 app.post(
   '/upload/fields',
-  uploadDetail.fields([{ name: 'userfile1'}, {name: 'userfile2' }]),
+  uploadDetail.fields([{ name: 'userfile1' }, { name: 'userfile2' }]),
   (req, res) => {
     console.log(req.files);
     console.log(req.body);
     res.send('여러 파일을 각각의 input에 업로드 완료');
   }
 );
+
+// 동적 폼 전송
+app.post('/dynamicFile', uploadDetail.single('dynamicUserfile'), (req, res) => {
+  console.log(req.file);
+  req.file.preFilepath = '/userUpload/';
+  res.send(req.file);
+});
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT} is running`);
