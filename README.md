@@ -23,4 +23,4 @@
 |23/08/11|Javascript 고급|[이동](./09.javascript-advanced/)|
 |23/08/14|비동기처리<br> Form|[비동기처리 이동](./10.asynchronous/) <br> [Form 이동](./11.form/)|
 |23/08/16|결석||
-|23/08/18, <br> 23/08/21|동적 폼 전송|[이동](./13.dynamic-form/)|
+|23/08/18, <br> 23/08/21|동적 폼 전송 <br>파일 업로드|[이동](./12.dynamic-form/) <br> [이동](./13.file-upload/)|

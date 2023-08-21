@@ -3,29 +3,30 @@
 ## [동적 폼 전송]
 
 - Ajax
-    - JQuery
+  - JQuery
 - Axios
-    - Promise
-        - then()
-        - catch()
-    - async-await
-        - try-catch
+  - Promise
+    - then()
+    - catch()
+  - async-await
+    - try-catch
 - fetch
-    - Promise
-        - then()
-            - return을 해줘야 함
-                - response.text()
-                - response.json()
-        - catch()
+  - Promise
+    - then()
+      - return을 해줘야 함
+        - response.text()
+        - response.json()
+    - catch()
 - form validation
-    - checkValidity()
+  - checkValidity()
 - 폼 전송
-    - 일반 폼 전송
-    - 동적 폼 전송
+  - 일반 폼 전송
+  - 동적 폼 전송
 
 ### ※ 커밋 메시지 컨벤션
 
 ---
+
 ### \[실습 1] axios get 회원가입
 
 [get으로 정보 받기 -1 : app.js](./app.js) <br>
