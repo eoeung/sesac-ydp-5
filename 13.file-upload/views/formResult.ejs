@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[실습 1] 일반 회원가입 결과</title>
+
+    <link rel="stylesheet" href="/public/css/index.css" />
+  </head>
+  <body>
+    <div class="card">
+      <img src=<%= file.preFilepath + file.filename %> width="200" />
+      <h3><%= data.formId %>님 환영합니다!</h3>
+      <ul>
+        <li>비밀번호: <%= data.formPw %></li>
+        <li>이름: <%= data.formName %></li>
+        <li>나이: <%= data.formAge %></li>
+      </ul>
+    </div>
+  </body>
+</html>

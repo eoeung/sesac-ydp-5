@@ -26,8 +26,22 @@ const uploadDetail = multer({
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB = 5Byte x 1024 x 1024
 });
 
+const trainingUpload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, done) {
+      done(null, 'uploads');
+    },
+    filename(req, file, done) {
+      const ext = path.extname(file.originalname);
+      done(null, req.body.formId + ext);
+    },
+  }),
+  limits: { fileSize: 5 * 1024 * 1024 },
+});
+
 app.set('view engine', 'ejs');
 app.set('/views', 'view');
+app.use('/public', express.static(__dirname + '/static'));
 app.use('/userUpload', express.static(__dirname + '/uploads'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -87,6 +101,20 @@ app.post('/dynamicFile', uploadDetail.single('dynamicUserfile'), (req, res) => {
   console.log(req.file);
   req.file.preFilepath = '/userUpload/';
   res.send(req.file);
+});
+
+// [실습 1] 파일 업로드 화면
+app.get('/training', (req, res) => {
+  res.render('training');
+});
+
+// [실습 1] 파일 업로드
+// input type="file"의 name을 적어줘야함
+app.post('/formRegister', trainingUpload.single('formProfile'), (req, res) => {
+  console.log(req.file);
+  console.log(req.body);
+  req.file.preFilepath = '/userUpload/'; // userUpload 설정
+  res.render('formResult', { file: req.file, data: req.body });
 });
 
 app.listen(PORT, function () {

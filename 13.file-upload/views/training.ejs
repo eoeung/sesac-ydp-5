@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[실습 1] 파일 업로드</title>
+
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+  <body>
+    <h2>회원가입</h2>
+
+    <form
+      action="/formRegister"
+      method="post"
+      name="formRg"
+      enctype="multipart/form-data"
+      onsubmit="return validation();"
+    >
+      <input type="text" name="formId" id="formId" placeholder="아이디" />
+      <br />
+      <input type="password" name="formPw" id="formPw" placeholder="비밀번호" />
+      <br />
+      <input type="text" name="formName" id="formName" placeholder="이름" />
+      <br />
+      <input type="text" name="formAge" id="formAge" placeholder="나이" />
+      <br />
+      <input type="file" name="formProfile" id="formProfile" /> <br /><br />
+
+      <button type="submit">회원가입</button>
+    </form>
+
+    <br />
+    <div id="alertBox"></div>
+
+    <script src="/public/js/training.js"></script>
+  </body>
+</html>
