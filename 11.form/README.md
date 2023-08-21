@@ -9,6 +9,9 @@
   - req.body
   - body-parser
 - truthy & falsy
+- JSON
+  - JSON.parse(object)
+  - JSON.stringify(JSON)
 ---
 
 ### \[실습 1] get으로 정보 받기

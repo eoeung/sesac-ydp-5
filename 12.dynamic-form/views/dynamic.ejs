@@ -28,11 +28,11 @@
     <!-- 이름, 성별(라디오버튼)을 정보를 입력받는 폼 -->
     <form name="register">
       <label for="name">이름</label>
-      <input type="text" id="name" name="name" value="SESAC" />
+      <input type="text" id="name" name="name" required />
       <br />
 
       성별
-      <input type="radio" name="gender" value="m" id="male" checked />
+      <input type="radio" name="gender" value="m" id="male" required />
       <label for="male">남</label>
       <input type="radio" name="gender" value="f" id="female" />
       <label for="female">여</label>
@@ -47,7 +47,9 @@
       <br />
 
       <!-- Axios -->
-      <button type="button" onClick="axiosGet();">Axios Get 제출</button>
+      <button type="button" onClick="axiosGet();">
+        Axios Get 제출 (+ form validation)
+      </button>
       <button type="button" onClick="axiosPost();">Axios Post 제출</button>
 
       <br />
@@ -65,7 +67,7 @@
     <h1>open API를 이용해 고양이 사진 랜덤 돌리기!</h1>
     <button onclick="changeImg();">랜덤</button>
 
-    <br><br>
+    <br /><br />
 
     <img
       src="https://i1.sndcdn.com/avatars-000349784990-sl1e1v-t500x500.jpg"
@@ -199,6 +201,11 @@
           gender: form.gender.value,
         };
 
+        console.log(form.name.checkValidity());
+        // 같은 name으로 묶인 radio btn은 하나만 선택되더라도 true를 반환
+        console.log(form.gender[0].checkValidity());
+        console.log(form.gender[1].checkValidity());
+
         // axios 요청의 결과는 Promise 객체
         // → then, catch 메서드로 체이닝이 가능
         // → async, await 도 사용할 수 있음
@@ -223,6 +230,18 @@
 
         // Quiz 2. axios 요청 처리 async/await로 변경
         try {
+          // 폼 유효성 검사
+          if (!form.name.checkValidity()) {
+            // name input에 입력된 값이 없다면, '이름을 입력해주세요.'
+            resultBox.textContent = '이름을 입력해주세요.';
+            return;
+          } else if (!form.gender[0].checkValidity()) {
+            // gender radio btn을 선택하지 않았다면, '성별을 선택해주세요.'
+            resultBox.textContent = '성별을 선택해주세요.';
+            return;
+          }
+          
+          // 둘 다 입력이 잘 되었다면, axios로 back에 요청 날리기
           const response = await axios({
             method: 'get', // 요청 방식 (= form method 속성)
             url: '/axios', // 요청 경로 (= form action 속성)
