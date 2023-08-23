@@ -1,0 +1,89 @@
+# 14.MySQL (2023/08/23)
+
+## [DataBase & MySQL]
+
+- 파일 / 데이터베이스
+- DBMS
+  - RDBMS
+    - MySQL
+- 용어
+	- column = attribute
+	- row = record = tuple
+	- table = relation
+	- key
+		- primary key
+		- foreign key
+- SQL
+  - data type
+    - string
+      - char
+      - varchar
+      - text
+      - mediumtext
+    - number
+      - tinyint
+      - smallint
+      - int
+      - bigint
+      - float
+    - date
+      - date
+      - time
+      - datetime
+  - DDL
+    - create
+      - create datebase
+      - create table
+    - alter
+      - alter table add
+      - alter table drop column
+      - alter table modify
+    - drop
+    - truncate
+  - DML
+    - select
+      - distinct
+      - limit
+      - from
+      - where
+        - 비교 연산자
+          - =
+          - \>
+          - \>=
+          - <
+          - <=
+        - 부정 연산자
+          - !=
+          - ^=
+          - <>
+          - NOT 컬럼명 =
+        - 범위, 집합, 패턴, NULL
+          - BETWEEN a AND b
+          - IN()
+          - LIKE ''
+            - %
+            - _
+          - IS NULL
+        - 복합 조건
+          - AND
+          - OR
+          - NOT
+        - order by
+        - group by
+          - sum()
+          - avg()
+          - max()
+          - min()
+          - count()
+          - count(distinct)
+          - having
+      - join
+        - inner join
+        - natural join
+        - outer join
+    - insert
+    - update
+    - delete
+  - DCL
+---
+
