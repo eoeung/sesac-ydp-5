@@ -30,6 +30,7 @@
       - date
       - time
       - datetime
+      - timestamp
   - DDL
     - create
       - create datebase
@@ -87,3 +88,22 @@
   - DCL
 ---
 
+### \[실습 1] DDL
+
+[[실습 1] DDL](./sql/training1_ddl.sql)
+
+### \[실습 2] DDL
+
+[[실습 2] DDL](./sql/training2_ddl.sql)
+
+### \[실습 3] CREATE 문
+
+[[실습 3] CREATE 문](./sql/training3_create.sql)
+
+### \[실습 4] INSERT 문
+
+[[실습 4] INSERT 문](./sql/training4_insert.sql)
+
+### \[실습 5] SELECT 문
+
+[[실습 5] SELECT 문](./sql/training5_select.sql)
