@@ -232,3 +232,102 @@ delete from customer where custid = 'apple';
 truncate table orders;
 set FOREIGN_KEY_CHECKS = 0; -- fk 체크를 하지 않도록 설정
 truncate table customer;
+
+-- ###########################
+-- < order by >
+-- order by 없는 경우 : pk 기준으로 오름차순 정렬
+select * from customer;
+
+select * from customer order by custname;
+
+select * from customer order by custname desc;
+
+-- where 절과 order by 함께 사용 (where 절이 order by보다 앞에 있어야 함)
+-- 2000년생 이후 출생자 중에서 주소를 기준으로 내림차순 검색
+select * from customer where birth >= '2001-01-01' order by addr desc;
+
+-- 2000년생 이후 출생자 중에서 1) 주소를 기준으로 내림차순 정렬, 2) 고객 id를 기준으로 내림차순 정렬
+select * from customer where birth >= '2001-01-01' order by addr desc, custid desc;
+
+-- 2000년생 이후 출생자 중에서 1) 주소를 기준으로 오름차순 정렬, 2) 고객 id를 기준으로 내림차순 정렬 
+select * from customer where birth >= '2001-01-01' order by addr, custid desc;
+
+-- ###########################
+-- < limit >
+-- 행의 개수를 제한
+select * from customer where birth >= '2001-01-01' limit 2;
+select * from customer limit 3;
+select * from customer;
+
+-- ###########################
+-- < Aggregate Function >
+-- 계산하여 어떤 값을 리턴하는 "함수"
+-- group by 절과 함께 쓰이는 케이스가 많음
+select * from orders;
+
+-- 주문 테이블에서 총 판매 개수 검색
+select sum(amount) from orders;
+
+-- 주문 테이블에서 총 판매 개수 검색 + 의미있는 열이름으로 변경 (total_sales)
+select sum(amount) as total_sales from orders;
+
+-- 주문 테이블에서 총 판매 개수, 평균 판매 개수, 상품 최저가, 상품 최고가 검색
+-- avg_amount, min_price, max_price
+select sum(amount) as total_sales, avg(amount) as avg_amount, min(price) as min_price, max(price) as max_price from orders;
+    
+-- 주문 테이블에서 총 주문 건수 (= 튜플 개수)
+select count(orderid) from orders;
+
+-- 주문 테이블에서 주문한 고객 수 
+select count(distinct custid) from orders;
+
+-- ###########################
+-- < group by >
+-- "~별로"
+
+-- 고객별로 주문한 건수
+select custid, count(*) from orders group by custid;
+
+-- 고객별로 주문한 상품 총 수량
+select custid, sum(amount) from orders group by custid;
+
+-- 고객별로 주문한 총 주문액 구하기
+select custid, sum(price*amount) from orders group by custid;
+
+-- 상품별로 판매 개수 구하기
+select prodname, sum(amount) from orders group by prodname;
+
+-- < having >
+-- group by 절 이후 추가 조건
+select * from orders;
+
+-- 총 주문액이 10,000원 이상인 고객에 대해서 고객별로 주문한 상품 총 수량 구하기 
+select custid, sum(amount), sum(price * amount) from orders group by custid having sum(price * amount) >= 10000;
+
+/*
+ * group 함수 잘못 사용 (SQL Error [1111] [HY000]: Invalid use of group function)
+select custid, sum(amount), sum(price * amount)
+from orders
+where sum(price * amount) >= 10000
+group by custid;
+*/
+
+-- 총 주문액이 10,000원 이상인 고객에 대해서 고개별로 주문한 상품 총 수량 구하기
+-- (단, custid가 'bunny'인 고객은 제외하고 출력할 것)
+select custid, sum(amount), sum(price * amount)
+from orders
+where custid <> 'bunny'
+group by custid
+having sum(price * amount) >= 10000;
+
+/*
+ where vs. having
+having
+- 그룹에 대해서 필터링 (그래서 group by 함께 쓰임)
+- group by 보다 뒤에 위치
+- 집계함수랑 함께 사용 가능
+where
+- 각각의 행을 필터링
+- group by 보다 앞에 위치
+- 집계함수를 쓸 수는 있으나 having 처럼 자유롭게 쓸 수는 없음
+ */

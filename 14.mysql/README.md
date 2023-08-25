@@ -77,7 +77,7 @@
           - min()
           - count()
           - count(distinct)
-          - having
+        - having
       - join
         - inner join
         - natural join
