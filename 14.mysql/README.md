@@ -79,6 +79,7 @@
           - count(distinct)
         - having
       - join
+        - cross join
         - inner join
         - natural join
         - outer join
