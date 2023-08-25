@@ -331,3 +331,8 @@ where
 - group by 보다 앞에 위치
 - 집계함수를 쓸 수는 있으나 having 처럼 자유롭게 쓸 수는 없음
  */
+
+-- group by 주의 사항
+-- select 절에서 group by에서 사용한 속성 및 집계 함수만 사용 가능
+-- 고객별로 주문한 주문 건수 구하기
+select custid, count(*) from orders group by custid;
