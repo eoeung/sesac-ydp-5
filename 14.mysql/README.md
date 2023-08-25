@@ -1,4 +1,4 @@
-# 14.MySQL (2023/08/23)
+# 14.MySQL (2023/08/23, 08/25)
 
 ## [DataBase & MySQL]
 
@@ -87,6 +87,8 @@
     - update
     - delete
   - DCL
+    - grant
+    - revoke
 ---
 
 ### \[실습 1] DDL
@@ -108,3 +110,11 @@
 ### \[실습 5] SELECT 문
 
 [[실습 5] SELECT 문](./sql/training5_select.sql)
+
+### \[실습 6] [선택 실습] 아래 조건을 만족하는 SQL문 작성하기
+
+[[실습 6] [선택 실습] 아래 조건을 만족하는 SQL문 작성하기](./sql/training6_relation.sql)
+
+### \[실습 7] < 실습 > 
+
+[[실습 7] < 실습 > ](./sql/training7_extension.sql)

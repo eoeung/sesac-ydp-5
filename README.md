@@ -25,3 +25,4 @@
 |23/08/16|결석||
 |23/08/18, <br> 23/08/21|동적 폼 전송 <br>파일 업로드|[이동](./12.dynamic-form/) <br> [이동](./13.file-upload/)|
 |23/08/23|DataBase & MySQL|[이동](./14.mysql/)|
+|23/08/25|DataBase & MySQL <br> MVC|[DataBase & MySQL 이동](./14.mysql/) <br> [MVC 이동](./15.mvc/)|
