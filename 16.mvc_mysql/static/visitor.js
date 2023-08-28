@@ -22,7 +22,7 @@ function createVisitor() {
 
       // 방금 추가한 방명록 정보를 보이기
       // → newVisitor 변수에 <tr> 요소를 생성하고, <tbody>의 맨 마지막 요소로 추가
-      const { id, name, comment } = res.data;
+      const { id, name, comment } = res.data; // res : id, name, comment
       const newVisitor = `
         <tr id="tr_${id}">
           <td>${id}</td>
@@ -32,7 +32,7 @@ function createVisitor() {
             <button type="button">수정</button>
           </td>
           <td>
-            <button type="button">삭제</button>
+            <button type="button" onclick="deleteVisitor(this, ${id});">삭제</button>
           </td>
         </tr>
     `;
@@ -46,6 +46,24 @@ function createVisitor() {
     .catch((err) => {
       console.log(err);
     });
+}
 
-  // res : id, name, comment
+// 방명록 삭제
+function deleteVisitor(obj, id) {
+  console.log(obj, id);
+
+  if (confirm('정말로 삭제하시겠습니까?')) {
+    axios({
+      method: 'delete',
+      url: '/visitor',
+      data: { id: id },
+    }).then((res) => {
+      console.log('delete /visitor 요청에 대한 응답', res.data);
+
+      alert('삭제 성공!');
+      obj.parentElement.parentElement.remove();
+    }).catch(err => {
+        console.log(err);
+    });
+  }
 }

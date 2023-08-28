@@ -38,3 +38,13 @@ exports.postVisitor = (name, comment, cb) => {
     cb(rows.insertId);
   });
 };
+
+exports.deleteVisitor = (id, cb) => {
+  const sql = `DELETE FROM VISITOR WHERE id = '${id}'`;
+  connection.query(sql, (err, rows) => {
+    if (err) throw err;
+
+    console.log('model >> ', rows);
+    cb(true); // { id: id }
+  });
+};
