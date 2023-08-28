@@ -16,6 +16,10 @@ values
 ('홍길동', '내가 왔다.'),
 ('이찬혁', '으라차차');
 
+insert into visitor(name, comment)
+values
+('이수현', '안뇽');
+
 -- 조회
 select * from visitor;
 
@@ -44,3 +48,6 @@ show databases;
 
 -- mysql이라는 Database에 user라는 테이블에 새로 만든 유저 정보가 있음 
 select * from mysql.user;
+
+-- 비밀번호 변경
+alter user 'user'@'%' identified with mysql_native_password by '12345';

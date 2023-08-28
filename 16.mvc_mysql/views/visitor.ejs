@@ -31,6 +31,8 @@
         padding: 10px 30px;
       }
     </style>
+
+    <script defer src="../static/visitor.js"></script>
   </head>
   <body>
     <form name="visitor-form">
@@ -38,7 +40,9 @@
         <legend>방명록 등록</legend>
         <input type="text" id="name" placeholder="사용자 이름" /> <br />
         <input type="text" id="comment" placeholder="방명록" /> <br /><br />
-        <button type="button">등록</button>
+        <div id="button-group">
+          <button type="button" onclick="createVisitor();">등록</button>
+        </div>
       </fieldset>
     </form>
 

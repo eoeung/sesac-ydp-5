@@ -12,7 +12,7 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'user',
-  password: '1234',
+  password: '12345',
   database: 'sesac',
 });
 
@@ -21,7 +21,20 @@ exports.getVisitors = (cb) => {
   connection.query(sql, (err, rows) => {
     if (err) throw err;
 
-    console.log(`Visitor.js : ${rows}`);
+    console.log('model : ', rows);
     cb(rows);
+  });
+};
+
+exports.postVisitor = (name, comment, cb) => {
+  // 매개변수
+  // data: 프론트엔드에서 유저가 입력한 값(req.body)
+  // callback; query 실행 후, 호출할 함수
+  const sql = `INSERT INTO VISITOR(name, comment) VALUES('${name}', '${comment}')`;
+  connection.query(sql, (err, rows) => {
+    if (err) throw err;
+
+    console.log('model >> ', rows);
+    cb(rows.insertId);
   });
 };

@@ -7,5 +7,6 @@ const router = express.Router();
 // 라우팅 함수 등록
 router.get('/', controller.main);
 router.get('/visitors', controller.getVisitors);
+router.post('/visitor', controller.postVisitor);
 
 module.exports = router;
