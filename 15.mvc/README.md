@@ -8,3 +8,6 @@
   - Controller
 - req.params
 - refactoring
+  - controller
+  - router
+  - model
