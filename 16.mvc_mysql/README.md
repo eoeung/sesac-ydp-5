@@ -2,3 +2,7 @@
 
 ## [MVC - MySQL 연결]
 
+- 방명록으로 CRUD 구현하기
+  - select
+  - insert
+  - delete
