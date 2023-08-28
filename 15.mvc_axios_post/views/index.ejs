@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[실습 1] MVC 패턴으로 axios post 로그인 구현하기</title>
+
+    <style>
+      fieldset {
+        width: 20%;
+      }
+
+      span#getResult {
+        color: blue;
+        font-weight: bold;
+      }
+      span#postResult {
+        font-weight: bold;
+      }
+    </style>
+
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- [실습 1] MVC 패턴으로 axios post 로그인 구현하기 -->
+    <h1>[실습 1] MVC 패턴으로 axios post 로그인 구현하기</h1>
+    <form name="postForm">
+      아이디 : <input type="text" name="id" /> <br />
+      비밀번호 : <input type="password" name="pw" />
+
+      <br />
+
+      <button type="button" onclick="axiosPostForm();">로그인</button>
+    </form>
+
+    <br />
+    <span>아이디: admin / 비밀번호: 1234</span>
+    <br />
+    <span id="postResult"></span>
+
+    <script>
+      async function axiosPostForm() {
+        const forms = document.forms['postForm'];
+        const id = forms.id.value;
+        const pw = forms.pw.value;
+
+        if (!id || !pw) {
+          postResult.style.color = 'green';
+          postResult.textContent = '아이디와 비밀번호는 필수 값입니다.';
+          return;
+        }
+
+        const data = {
+          id: id,
+          pw: pw,
+        };
+
+        try {
+          const response = await axios({
+            method: 'post',
+            url: '/postForm',
+            data: data,
+          });
+
+          const { member, tempMember } = response.data;
+
+          if (member.id === tempMember.id && member.pw === tempMember.pw) {
+            postResult.style.color = 'blue';
+            postResult.textContent = `${id}님 환영합니다!`;
+          } else {
+            postResult.style.color = 'red';
+            postResult.textContent = '아이디 혹은 비밀번호 오류입니다.';
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    </script>
+  </body>
+</html>

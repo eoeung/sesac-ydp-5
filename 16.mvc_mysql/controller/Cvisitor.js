@@ -8,6 +8,12 @@ exports.main = (req, res) => {
 
 // '/visitor'
 exports.getVisitors = (req, res) => {
-  console.log(Visitor.getVisitors());
-  res.render('visitor', { data: Visitor.getVisitors() });
+  // DB 연결 없이 값을 가지고 왔을 때
+  //   res.render('visitor', { data: Visitor.getVisitors() });
+
+  // MySQL 연결
+  Visitor.getVisitors((result) => {
+    console.log(`Controller >>' ${result}`);
+    res.render('visitor', { data: result });
+  });
 };
