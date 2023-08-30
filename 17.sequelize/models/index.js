@@ -1,3 +1,4 @@
+// 엄격 모드 <-> 느슨한 모드
 'use strict';
 
 // sequelize 모듈 호출
@@ -10,7 +11,7 @@ const config = require(__dirname + '/../config/config.json')['development'];
 // 빈 db 객체 생성
 const db = {};
 
-//
+// Sequelize 객체 생성해서 sequelize 변수에 저장
 const sequelize = new Sequelize(
   config.database, // sesac
   config.username, // user

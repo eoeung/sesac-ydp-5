@@ -25,50 +25,94 @@ exports.getVisitors = async (req, res) => {
 
 // GET '/visitor/:id'
 // 방명록 1개 조회
-exports.getVisitor = (req, res) => {
-  // QueryString → /visitor?id=1
-  console.log('req.query >> ', req.query); // {}
-  // param → /visitor/:id
-  console.log('req.params >> ', req.params); // { id: '1'}
+exports.getVisitor = async (req, res) => {
+  // [before]
+  // // QueryString → /visitor?id=1
+  // console.log('req.query >> ', req.query); // {}
+  // // param → /visitor/:id
+  // console.log('req.params >> ', req.params); // { id: '1'}
 
+  // const { id } = req.params;
+  // Visitor.getVisitor(id, (result) => {
+  //   console.log(' controller >> ', result);
+  //   res.send(result);
+  // });
+
+  // [after]
   const { id } = req.params;
-  Visitor.getVisitor(id, (result) => {
-    console.log(' controller >> ', result);
-    res.send(result);
+  const result = await Visitor.findOne({
+    where: { id: id },
   });
+
+  console.log(result);
+  res.send(result);
 };
 
 // POST '/visitor'
 // 방명록 등록
-exports.postVisitor = (req, res) => {
-  console.log('req.body >> ', req.body);
+exports.postVisitor = async (req, res) => {
+  // [before]
+  // console.log('req.body >> ', req.body);
+  // const { name, comment } = req.body;
+
+  // Visitor.postVisitor(name, comment, (insertId) => {
+  //   console.log('Controller >> ', insertId);
+
+  //   res.send({ id: insertId, name: name, comment: comment });
+  // });
+
+  // [after]
   const { name, comment } = req.body;
-
-  Visitor.postVisitor(name, comment, (insertId) => {
-    console.log('Controller >> ', insertId);
-
-    res.send({ id: insertId, name: name, comment: comment });
+  const result = await Visitor.create({
+    name,
+    comment,
   });
+
+  // console.log(result); // create()가 실행된 결과 (== insert한 데이터 값)
+  res.send(result);
 };
 
 // DELETE '/visitor'
 // 방명록 삭제
-exports.deleteVisitor = (req, res) => {
-  console.log('req.body : ', req.body);
-  const { id } = req.body;
+exports.deleteVisitor = async (req, res) => {
+  // [before]
+  // console.log('req.body : ', req.body);
+  // const { id } = req.body;
 
-  Visitor.deleteVisitor(id, (result) => {
-    console.log('controller >> ', result);
-    res.send(result);
+  // Visitor.deleteVisitor(id, (result) => {
+  //   console.log('controller >> ', result);
+  //   res.send(result);
+  // });
+
+  // [after]
+  const { id } = req.body;
+  const result = await Visitor.destroy({
+    where: { id: id },
   });
+  res.send(true);
 };
 
 // PATCH '/visitor'
 // 방명록 수정
-exports.updateVisitor = (req, res) => {
-  console.log(req.body);
+exports.updateVisitor = async (req, res) => {
+  // [before]
+  // console.log(req.body);
 
-  Visitor.updateVisitor(req.body, () => {
-    res.send({ isUpdated: true });
-  });
+  // Visitor.updateVisitor(req.body, () => {
+  //   res.send({ isUpdated: true });
+  // });
+
+  // [after]
+  // update(변경될 값, where 절)
+  await Visitor.update(
+    {
+      name: req.body.name,
+      comment: req.body.comment,
+    },
+    {
+      where: { id: req.body.id },
+    }
+  );
+
+  res.send({ isUpdated: true });
 };

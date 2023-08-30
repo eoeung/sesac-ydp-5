@@ -3,3 +3,5 @@
 ## [Sequelize]
 
 - Sequelize
+  - config
+  - models

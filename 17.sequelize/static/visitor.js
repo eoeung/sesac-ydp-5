@@ -78,7 +78,7 @@ function deleteVisitor(obj, id) {
   }
 }
 
-// 방명록 수정
+// 방명록 [수정] 버튼 클릭
 // 1) 수정 버튼을 클릭하면 해당 내용이 방명록에 출력됨
 // 2) 수정된 내용으로 방명록을 수정
 function editVisitor(id) {
