@@ -24,8 +24,8 @@ const Visitor = (Sequelize, DataTypes) => {
     },
     {
       tableName: 'visitor', // 실제 DB 테이블명
-      freezeTableName: true, // 테이블명 고정 (모델 이름을 테이블로 바꿀 대, 복수형으로 바뀜)
-      timestamps: false,
+      freezeTableName: true, // 테이블명 고정 (모델 이름을 테이블로 바꿀 때, 복수형으로 바뀜)
+      timestamps: true, // createAt, updateAt이라는 컬럼이 생성됨
     }
   );
 

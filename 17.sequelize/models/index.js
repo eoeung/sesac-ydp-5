@@ -6,7 +6,9 @@ const Sequelize = require('sequelize');
 
 // config.json 파일을 불러와서 development 환경의 DB 설정
 // config: DB 접근 가능한 설정 값 저장
+// console.log(__dirname); // C:\SeSAC\sesac-ydp-5\17.sequelize\models
 const config = require(__dirname + '/../config/config.json')['development'];
+// const config = require(__dirname + './../config/config.json')['development']; // 위 코드와 같음
 
 // 빈 db 객체 생성
 const db = {};
@@ -16,7 +18,7 @@ const sequelize = new Sequelize(
   config.database, // sesac
   config.username, // user
   config.password, // 12345
-  config // {} / 객체를 넘겨줌
+  config // config 객체를 넘겨줌
 );
 
 // db = {} → { sequelize: sequelize, Sequelize: Sequelize}
