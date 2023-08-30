@@ -1,5 +1,7 @@
 // 모델 연결
-const Visitor = require('../model/Visitor');
+// Sequelize 사용 시, 기존에 사용했던 Query문을 사용할 필요가 없음
+// const Visitor = require('../model/Visitor');
+const { Visitor } = require('../models'); // models/index.js
 
 // GET '/'
 exports.main = (req, res) => {
@@ -8,15 +10,17 @@ exports.main = (req, res) => {
 
 // GET '/visitors'
 // 모든 방명록 조회
-exports.getVisitors = (req, res) => {
-  // DB 연결 없이 값을 가지고 왔을 때
-  //   res.render('visitor', { data: Visitor.getVisitors() });
+exports.getVisitors = async (req, res) => {
+  // [before]
+  // Visitor.getVisitors((result) => {
+  //   console.log('Controller >>', result);
+  //   res.render('visitor', { data: result });
+  // });
 
-  // MySQL 연결
-  Visitor.getVisitors((result) => {
-    console.log('Controller >>', result);
-    res.render('visitor', { data: result });
-  });
+  // [after]
+  const result = await Visitor.findAll();
+  console.log(result);
+  res.render('visitor', { data: result });
 };
 
 // GET '/visitor/:id'

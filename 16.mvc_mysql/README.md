@@ -6,3 +6,4 @@
   - select
   - insert
   - delete
+  - update

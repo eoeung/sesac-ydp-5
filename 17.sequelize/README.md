@@ -1,8 +1,5 @@
-# 16.MVC - MySQL (2023/08/28)
+# 17.Sequelize (2023/08/30)
 
-## [MVC - MySQL 연결]
+## [Sequelize]
 
-- 방명록으로 CRUD 구현하기
-  - select
-  - insert
-  - delete
+- Sequelize

@@ -8,6 +8,9 @@ create table visitor(
 	comment		mediumtext
 );
 
+-- visitor 테이블 삭제
+drop table visitor;
+
 -- visitor 정보 확인
 desc visitor;
 

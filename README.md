@@ -26,4 +26,5 @@
 |23/08/18, <br> 23/08/21|동적 폼 전송 <br>파일 업로드|[이동](./12.dynamic-form/) <br> [이동](./13.file-upload/)|
 |23/08/23|DataBase & MySQL|[이동](./14.mysql/)|
 |23/08/25|DataBase & MySQL <br> MVC|[DataBase & MySQL 이동](./14.mysql/) <br> [MVC 이동](./15.mvc/)|
-|23/08/28|MVC|[MVC로 axios 동적 폼 실습 이동](./15.mvc_axios_post/) <br> [MVC - MySQL](./16.mvc_mysql/)|
+|23/08/28|MVC|[MVC로 axios 동적 폼 실습 이동](./15.mvc_axios_post/) <br> [MVC - MySQL / CRD](./16.mvc_mysql/)|
+|23/08/30|MVC|[MVC - MySQL / U](./16.mvc_mysql/) <br> [회원가입 - 로그인 실습](./16.mvc_mysql_release/)<br> [Squelize](./17.sequelize/)|
