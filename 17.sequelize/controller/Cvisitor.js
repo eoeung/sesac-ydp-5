@@ -1,7 +1,7 @@
 // 모델 연결
 // Sequelize 사용 시, 기존에 사용했던 Query문을 사용할 필요가 없음
 // const Visitor = require('../model/Visitor');
-const { Visitor } = require('../models'); // models/index.js
+const { Visitor } = require('../models'); // models안에 있는 파일을 구조 분해 할당
 
 // GET '/'
 exports.main = (req, res) => {
