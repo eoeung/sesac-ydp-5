@@ -4,5 +4,8 @@
 
 - Relationship
   - 1:1
+    - hasOne()
   - 1:n
   - n:n
+- VSCode Extension: Rest Client
+  - api.http
