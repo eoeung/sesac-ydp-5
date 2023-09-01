@@ -22,11 +22,11 @@ describe user;
 -- Sequelize의 timestamps: true로 적용하기 위해서
 drop table user;
 
--- 유저 정보 확인
--- select * from mysql.user;
-
 -- user 테이블 조회
 select * from user;
 
 -- 테스트 데이터 삭제
 delete from user;
+
+-- 유저 정보 확인
+-- select * from mysql.user;
