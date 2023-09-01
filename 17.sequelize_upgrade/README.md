@@ -9,3 +9,7 @@
   - n:n
 - VSCode Extension: Rest Client
   - api.http
+- join
+  - include: [{model: 'model_name'}]
+- order by
+  - order: [['column_name', 'ASC' | 'DESC']]
