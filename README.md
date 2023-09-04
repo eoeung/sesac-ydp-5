@@ -29,4 +29,4 @@
 |23/08/28|MVC|[MVC로 axios 동적 폼 실습 이동](./15.mvc_axios_post/) <br> [MVC - MySQL / CRD](./16.mvc_mysql/)|
 |23/08/30|MVC|[MVC - MySQL / U](./16.mvc_mysql/) <br> [회원가입 - 로그인 실습](./16.mvc_mysql_release/)<br> [Sequelize](./17.sequelize/)|
 |23/09/01|app.use() / app.set() <br> sequelize-join <br> Cookie|[app.use() / app.set() 이동](./ps.express-ex1/) <br> [sequelize-join 이동](./17.sequelize_upgrade/) <br> [Cookie 이동](./18.session-cookie/cookie.js)|
-|23/09/04|Session|[Session 이동](./18.session-cookie/session.js)|
+|23/09/04|Session <br> 환경 변수|[Session 이동](./18.session-cookie/session.js) <br> [환경 변수 이동]()|

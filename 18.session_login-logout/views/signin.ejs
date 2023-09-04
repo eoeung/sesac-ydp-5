@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./common/header.ejs') %>
+  <body>
+    <h1>로그인</h1>
+    <br />
+    <p>
+      정답 아이디는 admin이고 <br />
+      비밀번호는 admin입니다.
+    </p>
+    <br />
+    ID : <input type="text" name="id" id="" /> <br />
+    PW : <input type="password" name="pw" id="" /> <br />
+    <button type="button" onclick="signin();">로그인</button>
+
+    <script>
+      async function signin() {
+        const tempId = 'admin';
+        const tempPw = 'admin';
+        const id = document.querySelector('[name="id"]');
+        const pw = document.querySelector('[name="pw"]');
+
+        if (tempId === id.value && tempPw === pw.value) {
+          try {
+            const data = { id: id.value, pw: pw.value };
+            // console.log(data);
+
+            const response = await axios({
+              method: 'post',
+              url: '/postSignin',
+              data: data,
+            });
+
+            const { message } = response.data;
+            if (message === 'success') {
+              location.href = '/';
+            } else {
+              alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
+              id.value = '';
+              pw.value = '';
+              id.focus();
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        } else {
+          alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
+          id.value = '';
+          pw.value = '';
+          id.focus();
+        }
+      }
+    </script>
+  </body>
+</html>

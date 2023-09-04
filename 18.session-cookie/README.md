@@ -1,4 +1,4 @@
-# 18.Session - Cookie(2023/09/01)
+# 18.Session - Cookie(2023/09/01, 09/04)
 
 ## [Session - Cookie]
 
