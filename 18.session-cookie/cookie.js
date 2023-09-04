@@ -1,15 +1,19 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
 const app = express();
+
+dotenv.config();
+
 const hostname = '127.0.0.1';
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
 app.set('/view', '/views');
 
 // cookie-parser 미들웨어 등록
 // app.use(cookieParser()); // 일반 쿠키
-const COOKIE_SECRET_KEY = 'This is my secret key'; // 쿠키에 대한 비밀키
+const COOKIE_SECRET_KEY = process.env.COOKIE_SECRET_KEY; // 쿠키에 대한 비밀키
 app.use(cookieParser(COOKIE_SECRET_KEY)); // 암호화 쿠키
 
 // 쿠키 옵션 객체

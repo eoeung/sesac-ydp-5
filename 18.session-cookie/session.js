@@ -1,14 +1,18 @@
 const express = require('express');
 const session = require('express-session');
+const dotenv = require('dotenv');
 const app = express();
+
+dotenv.config();
+
 const hostname = '127.0.0.1';
-const PORT = 8080;
+const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
 // 세션 미들웨어 등록
 app.use(
   session({
-    secret: 'MySessionSecretKey', // key
+    secret: process.env.SESSION_SECRET_KEY, // key
     resave: false, //
     saveUninitialized: true, //
     cookie: {
