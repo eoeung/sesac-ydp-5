@@ -4,5 +4,9 @@
 
 - 환경 변수
   - dotenv
-  - dotenv.config()
-  - process.env.key
+    - dotenv.config()
+    - process.env.key
+  - cross-env
+    - package.json → scripts
+    - npm (run) start
+    - npm run start:prod
