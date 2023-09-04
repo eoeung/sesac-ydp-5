@@ -13,8 +13,8 @@ app.set('view engine', 'ejs');
 app.use(
   session({
     secret: process.env.SESSION_SECRET_KEY, // key
-    resave: false, //
-    saveUninitialized: true, //
+    resave: false, // 매 요청마다 세션을 다시 저장할 것인지
+    saveUninitialized: true, // 처음부터 세션을 생성할 것인지
     cookie: {
       httpOnly: true,
       maxAge: 60 * 1000, // 1m

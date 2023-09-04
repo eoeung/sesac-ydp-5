@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[실습 1] 회원가입, 로그인, 회원정보수정 실습 (with. 세션)</title>
+  </head>
+  <body>
+    <h1>[실습 1] 회원가입, 로그인, 회원정보수정 실습 (with. 세션)</h1>
+    <br />
+
+    <p>아직 로그인을 하지 않으셨습니다.</p>
+
+    <a href="/user/register">회원가입</a>
+    <a href="/user/login">로그인</a>
+    <% if(name) { %>
+    <a href="/users">전체회원</a>
+    <% } else { %>
+    <a href="/user/login">전체회원</a>
+    <% } %>
+
+    <!-- 미 로그인 상태면 /login으로 이동 // 로그인 상태면 전체회원 조회로 이동 -->
+    <% if(name) { %>
+    <a href="/profile">내 프로필</a>
+    <% } %>
+  </body>
+</html>

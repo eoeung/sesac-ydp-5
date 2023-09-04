@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+
+    <%- include('./common/header.ejs') %>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+
+    <br />
+
+    아이디 : <input type="text" name="userid" id="" placeholder="아이디" />
+    <br />
+    비밀번호 : <input type="password" name="pw" id="" placeholder="비밀번호" />
+    <br />
+    이름 : <input type="text" name="name" id="" placeholder="이름" />
+    <br /><br />
+    <button type="button" onclick="register();">회원가입</button>
+
+    <br /><br />
+
+    <a href="/">Home</a>
+    <a href="/login">로그인</a>
+
+    <script>
+      async function register() {
+        try {
+          const userid = document.querySelector('[name="userid"]');
+          const pw = document.querySelector('[name="pw"]');
+          const name = document.querySelector('[name="name"]');
+
+          const response = await axios({
+            method: 'post',
+            url: '/user/postRegister',
+            data: {
+              userid: userid.value,
+              pw: pw.value,
+              name: name.value,
+            },
+          });
+
+          const { message } = response.data;
+          if (message) {
+            alert('이미 등록되어 있는 아이디 입니다.\n다시 시도해주세요');
+            userid.value = '';
+            pw.value = '';
+            name.value = '';
+            userid.focus();
+          } else {
+            alert(`회원 가입이 완료되었습니다!\n${name.value}님 반갑습니다!`);
+            location.href = '/';
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    </script>
+  </body>
+</html>
