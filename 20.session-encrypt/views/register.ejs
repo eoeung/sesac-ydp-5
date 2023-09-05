@@ -23,35 +23,44 @@
     <br /><br />
 
     <a href="/">Home</a>
-    <a href="/login">로그인</a>
+    <a href="/user/login">로그인</a>
 
     <script>
       async function register() {
+        const userid = document.querySelector('[name="userid"]');
+        const pw = document.querySelector('[name="pw"]');
+        const name = document.querySelector('[name="name"]');
+
         try {
-          const userid = document.querySelector('[name="userid"]');
-          const pw = document.querySelector('[name="pw"]');
-          const name = document.querySelector('[name="name"]');
-
-          const response = await axios({
-            method: 'post',
-            url: '/user/register',
-            data: {
-              userid: userid.value,
-              pw: pw.value,
-              name: name.value,
-            },
-          });
-
-          const { message } = response.data;
-          if (message) {
-            alert('이미 등록되어 있는 아이디 입니다.\n다시 시도해주세요');
-            userid.value = '';
-            pw.value = '';
-            name.value = '';
-            userid.focus();
+          if (userid.value.trim().length < 1 || pw.value.trim().length < 1) {
+            alert('아이디 혹은 비밀번호에 값을 입력해주세요.');
+            return;
           } else {
-            alert(`회원 가입이 완료되었습니다!\n${name.value}님 반갑습니다!`);
-            location.href = '/';
+            if (confirm('회원가입을 하시겠습니까?')) {
+              const response = await axios({
+                method: 'post',
+                url: '/user/register',
+                data: {
+                  userid: userid.value,
+                  pw: pw.value,
+                  name: name.value,
+                },
+              });
+
+              const { message } = response.data;
+              if (message) {
+                alert('이미 등록되어 있는 아이디 입니다.\n다시 시도해주세요');
+                userid.value = '';
+                pw.value = '';
+                name.value = '';
+                userid.focus();
+              } else {
+                alert(
+                  `회원 가입이 완료되었습니다!\n${name.value}님 반갑습니다!`
+                );
+                location.href = '/';
+              }
+            }
           }
         } catch (err) {
           console.log(err);
