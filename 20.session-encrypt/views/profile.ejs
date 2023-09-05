@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= data.name %>님의 프로필</title>
+
+    <%- include('./common/header') %>
+  </head>
+  <body>
+    <h1><%= data.name %>님의 프로필</h1>
+
+    <br />
+
+    id : <input type="text" name="userid" value="<%= data.userid %>" disabled />
+    <br />
+    name : <input type="text" name="name" value="<%= data.name %>" /> <br />
+    pw : <input type="password" name="pw" value="<%= data.pw %>" /> <br />
+
+    <br /><br />
+
+    <button type="button" onclick="updateProfile();">수정</button>
+    <button type="button" onclick="deleteProfile();">탈퇴</button>
+
+    <br /><br />
+
+    <a href="/">Home</a>
+
+    <script>
+      // 프로필 조회 실패 처리
+      if ('<%=message%>' === 'fail') {
+        alert('프로필 조회에 실패했습니다. \n홈 화면으로 이동합니다.');
+        location.href = '/';
+      }
+
+      // 프로필 수정
+      async function updateProfile() {
+        if (confirm('프로필을 수정하시겠습니까?')) {
+          const inputName = document.querySelector('[name="name"]');
+          const inputPw = document.querySelector('[name="pw"]');
+
+          try {
+            const response = await axios({
+              method: 'patch',
+              url: '/user/profile',
+              data: {
+                id: '<%= data.id %>',
+                name: inputName.value,
+                pw: inputPw.value,
+              },
+            });
+
+            const { name, pw, message } = response.data;
+            if (message) {
+              alert('프로필 수정에 실패했습니다.');
+            } else {
+              alert('프로필 수정에 성공했습니다.');
+
+              document.title = `${name}님의 프로필`;
+              document.querySelector('h1').textContent = `${name}님의 프로필`;
+              inputName.value = name;
+              inputPw.value = pw;
+              inputName.focus();
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        }
+      }
+
+      // 탈퇴
+      async function deleteProfile() {
+        if (confirm('탈퇴하시겠습니까?')) {
+          try {
+            const response = await axios({
+              method: 'delete',
+              url: '/user/profile',
+              data: {
+                id: '<%= data.id %>',
+              },
+            });
+
+            const { message } = response;
+            if (message) {
+              alert('탈퇴에 실패했습니다.');
+            } else {
+              alert('탈퇴에 성공했습니다');
+            }
+            location.href = '/';
+          } catch (err) {
+            console.log(err);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

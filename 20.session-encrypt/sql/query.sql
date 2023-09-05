@@ -17,3 +17,6 @@ describe user;
 
 -- user 테이블 레코드 조회
 select * from user;
+
+-- user 테이블 레코드 모두 삭제
+truncate table user;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+
+    <%- include('./common/header') %>
+  </head>
+  <body>
+    <h1>로그인</h1>
+
+    id : <input type="text" name="userid" placeholder="아이디" /> <br />
+    pw : <input type="password" name="pw" placeholder="비밀번호" /> <br /><br />
+    <button type="button" onclick="login();">로그인</button> <br />
+
+    <br /><br />
+
+    <a href="/">Home</a>
+    <a href="/user/register">회원가입</a>
+
+    <script>
+      function login() {
+        const userid = document.querySelector('[name="userid"]');
+        const pw = document.querySelector('[name="pw"]');
+
+        axios({
+          method: 'post',
+          url: '/user/login',
+          data: {
+            userid: userid.value,
+            pw: pw.value,
+          },
+        })
+          .then((res) => {
+            const { name, message } = res.data;
+            if (message) {
+              alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+              userid.value = '';
+              pw.value = '';
+              userid.focus();
+            } else {
+              alert(`${name}님 환영합니다!`);
+              location.href = '/';
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    </script>
+  </body>
+</html>

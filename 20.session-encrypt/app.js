@@ -33,6 +33,8 @@ app.use(
 );
 
 app.get('/', (req, res) => {
+  // console.log(req.session);
+  // console.log(req.sessionID);
   res.render('index', { name: req.session.name });
 });
 
