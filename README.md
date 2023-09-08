@@ -30,3 +30,4 @@
 |23/08/30|MVC|[MVC - MySQL / U](./16.mvc_mysql/) <br> [회원가입 - 로그인 실습](./16.mvc_mysql_release/)<br> [Sequelize](./17.sequelize/)|
 |23/09/01|app.use() / app.set() <br> sequelize-join <br> Cookie|[app.use() / app.set() 이동](./ps.express-ex1/) <br> [sequelize-join 이동](./17.sequelize_upgrade/) <br> [Cookie 이동](./18.session-cookie/cookie.js)|
 |23/09/04|Session <br> 환경 변수 <br> 암호화|[Session 이동](./18.session-cookie/session.js) <br> [환경 변수 이동](./19.env/) <br> [암호화 이동](./20.encrypt/)|
+|23/09/06 ~ 09/22|1차 팀 프로젝트 및 발표 <br> Git 협업||
