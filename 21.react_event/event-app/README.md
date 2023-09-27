@@ -22,14 +22,14 @@
         - \<tag>on###={() => ###(parameter)}\</tag>
         - \<tag>on###={(e) => ###(e, parameter)}\</tag>
 
-### \[실습 1-1] 클래스형 컴포넌트 State 실습
+### \[실습 1-1] 이벤트 핸들링 실습
 
-[클래스형 컴포넌트 State 실습](./src/NumberClass.js)
+[이벤트 핸들링 실습](./src/ex/Handler_ex.js)
 
-### \[실습 1-2] 함수형 컴포넌트 State 실습
+### \[실습 1-2] state & 이벤트 핸들링-1 실습
 
-[함수형 컴포넌트 State 실습](./src/NumberFunction.js)
+[state & 이벤트 핸들링-1 실습](./src/FontColor.js)
 
-### \[실습 1-3] 함수형 컴포넌트 State 실습
+### \[실습 1-3] state & 이벤트 핸들링-2 실습
 
-[함수형 컴포넌트 State 실습](./src/NumberFunction.js)
+[state & 이벤트 핸들링-2 실습](./src/None.js)
