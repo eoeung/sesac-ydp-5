@@ -32,3 +32,4 @@
 |23/09/04|Session <br> 환경 변수 <br> 암호화|[Session 이동](./18.session-cookie/session.js) <br> [환경 변수 이동](./19.env/) <br> [암호화 이동](./20.encrypt/)|
 |23/09/06 ~ 09/22|1차 팀 프로젝트 및 발표 <br> Git 협업|[새싹 스터디 커뮤니티 이동](https://github.com/1st-team-d/ssac-community)|
 |23/09/25|React 기초 <br> React - Props|[React 기초 이동](./21.react/test-app/) <br> [React Props 이동](./21.react_props/props-app/)|
+|23/09/27|React - State <br> React - Event Handler|[React State 이동](./21.react_state/state-app/) <br> [React Event Handler 이동](./21.react_event/event-app/)|

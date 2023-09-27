@@ -14,6 +14,7 @@
     - useState()
     - [value, setValue]
     - setValue(...)
+- Event Handling
 
 ### \[실습 1-1] 클래스형 컴포넌트 State 실습
 
