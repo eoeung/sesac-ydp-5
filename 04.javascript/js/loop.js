@@ -181,3 +181,19 @@ const includesA = words.filter((e) => e.includes('a'));
 const indexOfA = words.filter((e) => e.indexOf('a') > -1);
 console.log(includesA); // [ 'cat', 'rabbit', 'apple' ]
 console.log(indexOfA); // [ 'cat', 'rabbit', 'apple' ]
+console.log('--------------------------------------------------');
+console.log('--------------------------------------------------');
+
+// 3) reduce() : 배열의 각 요소에 대해서 주어진 reducer 함수를 실행, 하나의 결과값만 반환
+
+// reduce((acc, cur) => { ... }, initValue)
+// - acc : 누적되는 값
+// - cur : 현재 요소
+// - initValue : 초기값
+const number = [1, 2, 3, 4, 5];
+const initialValue = 100;
+const result = number.reduce((acc, cur) => {
+  return acc + cur;
+}, initialValue);
+
+console.log(result); // 115
