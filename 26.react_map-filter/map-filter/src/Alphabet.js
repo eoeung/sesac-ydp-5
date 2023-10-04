@@ -55,7 +55,7 @@ export default function Alphabet() {
   const handleKeyDown = (e) => {
     //   console.log(e);
     // console.log(e.nativeEvent.isComposing);
-    // bug fix : IME(input method enter) 문제 해결
+    // bug fix : IME(input method editor) 문제 해결
     if(e.nativeEvent.isComposing){
         return;
     }
