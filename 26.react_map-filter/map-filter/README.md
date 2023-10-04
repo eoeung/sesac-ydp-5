@@ -1,14 +1,14 @@
 # 26.React - Map & Filter (2023/10/04)
 
-## [React - Map & Filter ]
+## [React - Map & Filter]
 
 - 'key' property
-- Event Handling
+- 이벤트와 연동해서 map()과 filter() 적용
 
-### \[실습 1-1] 클래스형 컴포넌트 State 실습
+### \[실습 1] 컴포넌트 응용 실습
 
-[클래스형 컴포넌트 State 실습](./src/NumberClass.js)
+[컴포넌트 응용 실습](./src/ex/Event_ex.js)
 
-### \[실습 1-2] 함수형 컴포넌트 State 실습
+### \[실습 2] React 실습
 
-[함수형 컴포넌트 State 실습](./src/NumberFunction.js)
+[React 실습](./src/Map.js)

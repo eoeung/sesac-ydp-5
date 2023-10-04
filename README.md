@@ -33,4 +33,4 @@
 |23/09/06 ~ 09/22|1차 팀 프로젝트 및 발표 <br> Git 협업|[새싹 스터디 커뮤니티 이동](https://github.com/1st-team-d/ssac-community)|
 |23/09/25|React 기초 <br> React - Props|[React 기초 이동](./21.react/test-app/) <br> [React Props 이동](./22.react_props/props-app/)|
 |23/09/27|React - State <br> React - Event Handler <br> React - 종합 실습|[React State 이동](./23.react_state/state-app/) <br> [React Event Handler 이동](./24.react_event/event-app/) <br> [React 종합 실습 이동](./25.react_all_practice/practice-app/)|
-|23/10/04|React - Map|[React Map 이동](./26.react_map-filter/map-filter/)|
+|23/10/04|React - Map & Filter <br> React - Ref|[React Map & Filter 이동](./26.react_map-filter/map-filter/) <br> [React Ref 이동](./27.react_ref-lifecycle/ref-lifecycle/)|

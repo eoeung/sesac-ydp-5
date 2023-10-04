@@ -52,12 +52,13 @@ export default function Alphabet() {
     setAlphabet(newAlpha);
   };
 
+  // [Quiz] input에서 enter키 누르면 추가되도록
   const handleKeyDown = (e) => {
     //   console.log(e);
     // console.log(e.nativeEvent.isComposing);
     // bug fix : IME(input method editor) 문제 해결
-    if(e.nativeEvent.isComposing){
-        return;
+    if (e.nativeEvent.isComposing) {
+      return;
     }
 
     if (e.key === 'Enter') {
