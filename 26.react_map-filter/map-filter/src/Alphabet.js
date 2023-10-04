@@ -52,6 +52,19 @@ export default function Alphabet() {
     setAlphabet(newAlpha);
   };
 
+  const handleKeyDown = (e) => {
+    //   console.log(e);
+    // console.log(e.nativeEvent.isComposing);
+    // bug fix : IME(input method enter) 문제 해결
+    if(e.nativeEvent.isComposing){
+        return;
+    }
+
+    if (e.key === 'Enter') {
+      addAlpha();
+    }
+  };
+
   return (
     <div>
       <input
@@ -62,12 +75,7 @@ export default function Alphabet() {
           setInputAlpha(e.target.value);
         }}
         // [Quiz] input에서 enter키 누르면 추가되도록
-        onKeyDown={(e) => {
-        //   console.log(e);
-          if (e.key === 'Enter') {
-            addAlpha();
-          }
-        }}
+        onKeyDown={(e) => handleKeyDown(e)}
       />
       <button onClick={addAlpha}>ADD</button>
       <ol>
