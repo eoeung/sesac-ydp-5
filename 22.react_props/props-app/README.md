@@ -1,4 +1,4 @@
-# 21.React - Props (2023/09/25)
+# 22.React - Props (2023/09/25)
 
 ## [React - Props]
 

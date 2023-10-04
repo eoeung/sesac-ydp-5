@@ -1,4 +1,4 @@
-# 21.React - 종합 실습 (props, state, event) (2023/09/27)
+# 25.React - 종합 실습 (props, state, event) (2023/09/27)
 
 ## [React - 종합 실습 (props, state, event)]
 

@@ -1,4 +1,4 @@
-# 21.React - Event Handler (2023/09/27)
+# 24.React - Event Handler (2023/09/27)
 
 ## [React - Event Handler]
 
