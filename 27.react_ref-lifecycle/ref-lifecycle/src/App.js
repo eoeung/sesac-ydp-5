@@ -1,8 +1,9 @@
+import LifeCycleClass from './LifeCycleClass';
+import LifeCycleFunc from './LifeCycleFunc';
 import RefSample1 from './RefSample1';
 import RefSample2 from './RefSample2';
 import RefSample3 from './RefSample3';
 import RefSample4 from './RefSample4';
-import RefTraining from './RefTraining';
 
 function App() {
   return (
@@ -31,8 +32,14 @@ function App() {
 
       <br/><br/><br/><hr/><br/><br/><br/>
 
-      {/* [실습 1] ref 실습 */}
-      <RefTraining />
+      {/* LifeCycle(클래스형 컴포넌트) */}
+      <LifeCycleClass/>
+
+      <br/><br/><br/><hr/><br/><br/><br/>
+
+      {/* LifeCycle(함수형 컴포넌트) */}
+      <LifeCycleFunc />
+
     </div>
   );
 }
