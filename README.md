@@ -34,3 +34,5 @@
 |23/09/25|React 기초 <br> React - Props|[React 기초 이동](./21.react/test-app/) <br> [React Props 이동](./22.react_props/props-app/)|
 |23/09/27|React - State <br> React - Event Handler <br> React - 종합 실습|[React State 이동](./23.react_state/state-app/) <br> [React Event Handler 이동](./24.react_event/event-app/) <br> [React 종합 실습 이동](./25.react_all_practice/practice-app/)|
 |23/10/04|React - Map & Filter <br> React - Ref|[React Map & Filter 이동](./26.react_map-filter/map-filter/) <br> [React Ref 이동](./27.react_ref-lifecycle/ref-lifecycle/)|
+|23/10/06 ~ 13|*결석*||
+|23/10/16|React - Router <br> React - react-hook-form|[React Router 이동](./30.react_router/router-app/) <br> [React react-hook-form 이동](./28.react_hooks/hooks-app/src/components/react-hook-form/)| ??? |
