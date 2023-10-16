@@ -35,4 +35,4 @@
 |23/09/27|React - State <br> React - Event Handler <br> React - 종합 실습|[React State 이동](./23.react_state/state-app/) <br> [React Event Handler 이동](./24.react_event/event-app/) <br> [React 종합 실습 이동](./25.react_all_practice/practice-app/)|
 |23/10/04|React - Map & Filter <br> React - Ref|[React Map & Filter 이동](./26.react_map-filter/map-filter/) <br> [React Ref 이동](./27.react_ref-lifecycle/ref-lifecycle/)|
 |23/10/06 ~ 13|*결석*||
-|23/10/16|React - Router <br> React - react-hook-form|[React Router 이동](./30.react_router/router-app/) <br> [React react-hook-form 이동](./28.react_hooks/hooks-app/src/components/react-hook-form/)| ??? |
+|23/10/16|React - Router <br> React - react-hook-form <br> React - Redux|[React Router 이동](./30.react_router/router-app/) <br> [React react-hook-form 이동](./28.react_hooks/hooks-app/src/components/react-hook-form/) <br> [React Redux 이동](./31.react_redux/redux-app/)| ??? |
