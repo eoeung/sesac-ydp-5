@@ -1,16 +1,11 @@
 import Alphabet from './Alphabet';
 import Map from './Map';
-import Event_ex from './ex/Event_ex';
+import EventEx from './ex/EventEx';
 
 function App() {
   return (
     <div className="App">
-      {/* <Alphabet /> */}
-      <Event_ex />
-
-      <br />
-      <br />
-      <br />
+      <Alphabet />
       <br />
       <br />
       <br />
@@ -18,6 +13,12 @@ function App() {
       <br />
       <br />
       <br />
+
+      <EventEx />
+      <br />
+      <br />
+      <br />
+      <hr />
       <br />
       <br />
       <br />
