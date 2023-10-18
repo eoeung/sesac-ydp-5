@@ -1,4 +1,4 @@
-# 30.React - Redux (2023/10/16)
+# 30.React - Redux (2023/10/16, 10/18)
 
 ## [React - Redux]
 
@@ -12,6 +12,11 @@
   - Action
   - Reducer
   - Dispatch
+```bash
+# redux / react-redux / @reduxjs/toolkit 설치
+$ npm i redux react-redux @reduxjs/toolkit redux-devtools-extension
+```
+-  
 
 ### \[실습 1] Router 실습
 

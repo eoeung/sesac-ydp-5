@@ -8,12 +8,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React Redux Example</h1>
+      <h1>React Redux Example (Props Drilling)</h1>
       <Box1 number={number} plus={plus} minus={minus} />
     </div>
   );
 }
 
+// Props Drilling : 최하위 컴포넌트에 props 값을 전달하기 위해, 중간에 있는 컴포넌트에서 사용하지 않음에도 값을 전달해야한다.
+// Box4에서 number를 사용하고 싶기 때문에 Box1 → Box2 → Box3 → Box4로 props 값을 전달해야한다.
 const Box1 = ({ number, plus, minus }) => {
   return (
     <div className="Box">
