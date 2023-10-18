@@ -36,4 +36,4 @@
 |23/10/04|React - Map & Filter <br> React - Ref|[React Map & Filter 이동](./26.react_map-filter/map-filter/) <br> [React Ref 이동](./27.react_ref-lifecycle/ref-lifecycle/)|
 |23/10/06 ~ 13|*결석*||
 |23/10/16|React - Router <br> React - react-hook-form <br> React - Redux|[React Router 이동](./30.react_router/router-app/) <br> [React react-hook-form 이동](./28.react_hooks/hooks-app/src/components/react-hook-form/) <br> [React Redux 이동](./31.react_redux/redux-app/)|
-|23/10/18|React - Redux|[React Redux 이동](./31.react_redux/redux-app/)|
+|23/10/18|React - Redux <br> TypeScript|[React Redux 이동](./31.react_redux/redux-app/) <br> [TypeScript](./32.typescript/)|

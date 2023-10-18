@@ -1,4 +1,4 @@
-# 30.React - Redux (2023/10/16, 10/18)
+# 30 ~ 31.React - Redux (2023/10/16, 10/18)
 
 ## [React - Redux]
 
