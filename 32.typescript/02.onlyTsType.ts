@@ -47,6 +47,7 @@ console.log(Auth);
 //   }
 console.log(Auth.admin);
 console.log(Auth['0']); // admin
+console.log(Auth[0]); // admin
 
 console.log('---------------------------------------------');
 
