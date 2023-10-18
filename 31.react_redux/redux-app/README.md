@@ -20,12 +20,12 @@
     - reducer(state, action) => {...}
   - Dispatch
     - useDispatch()
+
 ```bash
 # redux / react-redux / @reduxjs/toolkit 설치
 $ npm i redux react-redux @reduxjs/toolkit redux-devtools-extension
 ```
--  
 
-### \[실습 1] Router 실습
+### \[실습 1] React Redux 실습(은행 => 입·출금)
 
-[Router 실습](../../30.react_router_training/router-training-app/src/App.js)
+[React Redux 실습(은행 => 입·출금)](./src/Training.js)
