@@ -3,7 +3,6 @@
 ## [TypeScript]
 
 - TypeScript
-
   - 타입이 있는 자바스크립트
   - 정적 파일 언어
   - Transpiler
@@ -84,7 +83,10 @@
     - Generic
       - 함수를 호출할 때, 데이터 타입을 지정할 수 있음
       ```typescript
-      
+      function arrLen<T>(arr: T[]): number {
+        return arr.length;
+      }
+      console.log(arrLen<number>([1, 2, 3])); // 3
       ```
 
 ### \[실습 1] Object, boolean 데이터 타입 순으로 설정하는 튜플 만들어보기
