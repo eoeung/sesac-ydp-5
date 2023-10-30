@@ -38,3 +38,5 @@
 |23/10/16|React - Router <br> React - react-hook-form <br> React - Redux|[React Router 이동](./30.react_router/router-app/) <br> [React react-hook-form 이동](./28.react_hooks/hooks-app/src/components/react-hook-form/) <br> [React Redux 이동](./31.react_redux/redux-app/)|
 |23/10/18|React - Redux <br> TypeScript|[React Redux 이동](./31.react_redux/redux-app/) <br> [TypeScript 이동](./32.typescript/)|
 |23/10/20|TypeScript <br> React With TypeScript|[TypeScript 이동](./32.typescript/) <br> [React With TypeScript 이동](./33.typescript-react/typescript-react-app/)|
+|23/10/30|JWT|[JWT 이동](./34.jwt_pj/)|
+|23/10/23 ~ 11/10|2차 팀 프로젝트|[2차 프로젝트 이동](https://github.com/SesacProjectTeamA-2)|
