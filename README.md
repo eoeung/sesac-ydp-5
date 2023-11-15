@@ -41,3 +41,4 @@
 |23/10/30|JWT|[JWT 이동](./34.jwt_pj/)|
 |23/10/23 ~ 11/10|2차 팀 프로젝트|[2차 프로젝트 이동](https://github.com/SesacProjectTeamA-2/pj-back)|
 |23/11/13|WebSocket|[WebSocket 이동](./35.websocket/)|
+|23/11/15|Socket.io|[Socket.io 이동](./36.socketio/)|

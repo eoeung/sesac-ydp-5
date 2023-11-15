@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io 채팅</title>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <style>
+      .chat-box {
+        display: none;
+      }
+      .chat-list {
+        background-color: #333;
+        min-height: 500px;
+      }
+      .my-chat {
+        text-align: right;
+        padding: 20px;
+      }
+      .my-chat span {
+        background-color: yellow;
+      }
+      .other-chat {
+        text-align: left;
+        padding: 20px;
+      }
+      .other-chat span {
+        background-color: #fff;
+      }
+      .notice-chat {
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+      }
+      .dm-chat {
+        color: #000;
+        background-color: darksalmon !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- [실습 1] 각 버튼 누를 때 마다 서버로 메시지 보내기 -->
+    <!-- <button onclick="say('hello')">Hello</button>
+    <button onclick="say('study')">Study</button>
+    <button onclick="say('bye')">Bye</button>
+    <p id="form-server"></p>
+
+    <script>
+      const socket = io.connect(); // socket 사용을 위한 객체 사용
+      const fs = document.querySelector('#form-server');
+
+      socket.on('connect', () => {
+        console.log('클라이언트 연결 완료 ::: ', socket);
+        console.log(socket.id);
+
+        socket.on('helloKr', (data) => {
+          onFunc(data);
+        });
+
+        socket.on('studyKr', (data) => {
+          onFunc(data);
+        });
+
+        socket.on('byeKr', (data) => {
+          onFunc(data);
+        });
+      });
+
+      // [실습 1] 각 버튼 누를 때 마다 서버로 메시지 보내기
+      function onFunc(data) {
+        const { who, msg } = data;
+        fs.textContent = `${who} : ${msg}`;
+      }
+
+      // [실습 1] 각 버튼 누를 때 마다 서버로 메시지 보내기
+      function say(eventName) {
+        socket.emit(eventName, { who: 'client', msg: eventName });
+      }
+    </script> -->
+
+    <!-- [실습 4] 채팅창 메시지 전송 - 닉네임 -->
+    <div class="entry-box">
+      <input
+        type="text"
+        id="nickName"
+        placeholder="닉네임"
+        onkeypress="if(window.event.keyCode==13){join()}"
+      />
+      <button onclick="join();">입장</button>
+    </div>
+
+    <!-- [실습 2] 채팅 UI -->
+    <main class="chat-box">
+      <div class="chat-list">
+        <!-- 임시 대화 데이터 -->
+        <!-- <div class="my-chat">
+          <span>user1 : msg1</span>
+        </div>
+        <div class="other-chat">
+          <span>user2 : msg2</span>
+        </div> -->
+      </div>
+
+      <select id="nick-list"></select
+      >에게
+      <input
+        type="text"
+        id="input-msg"
+        placeholder="메시지를 입력해주세요."
+        onkeypress="if(window.event.keyCode==13){emitMsg()}"
+      />
+      <button onclick="emitMsg();">전송</button>
+    </main>
+
+    <script>
+      // [실습 4] 채팅창 메시지 전송 - 닉네임 설정
+      function join() {
+        nickName = document.querySelector('#nickName').value;
+        socket.emit('setNickName', nickName);
+      }
+
+      // [실습 4] 채팅창 메시지 전송 - 채팅 메시지
+      function emitMsg() {
+        const selectedNickName = document.querySelector(
+          '#nick-list option:checked'
+        ).value;
+
+        if (selectedNickName !== 'all') {
+          socket.emit('DM', {
+            toSocketId: selectedNickName,
+            fromNickName: myNickName,
+            msg: inputMsg.value,
+          });
+
+          const div = document.createElement('div');
+          const span = document.createElement('span');
+
+          div.className = 'my-chat';
+
+          span.textContent = `(귓속말) ${myNickName} : ${inputMsg.value}`;
+          span.className = 'dm-chat';
+          div.append(span);
+          chatList.append(div);
+        } else {
+          // socket.emit('message', { who: socket.id, msg: inputMsg.value });
+          socket.emit('message', { nickName: myNickName, msg: inputMsg.value });
+        }
+
+        inputMsg.value = '';
+      }
+
+      let myNickName;
+      const chatBox = document.querySelector('.chat-box');
+      const inputMsg = document.querySelector('#input-msg');
+      const chatList = document.querySelector('.chat-list');
+
+      const socket = io.connect('http://localhost:8080');
+      socket.on('connect', () => {
+        console.log('클라이언트 연결 완료 ::: ', socket.id);
+      });
+
+      socket.on('notice', (data) => {
+        // const div = document.createElement('div');
+        // const span = document.createElement('span');
+
+        // span.textContent = `${data}`;
+        // div.className = 'notice-chat';
+        // div.append(span);
+        // chatList.append(div);
+
+        chatList.insertAdjacentHTML(
+          'beforeend',
+          `<div class="notice-chat">${data}</div>`
+        );
+      });
+
+      socket.on('error', (data) => {
+        alert(data.msg);
+      });
+
+      socket.on('message', (data) => {
+        const div = document.createElement('div');
+        const span = document.createElement('span');
+
+        const { nickName, msg } = data;
+        // if (who === socket.id) {
+        if (myNickName === nickName) {
+          div.className = 'my-chat';
+        } else {
+          div.className = 'other-chat';
+        }
+
+        span.textContent = `${nickName} : ${msg}`;
+        div.append(span);
+        chatList.append(div);
+      });
+
+      // DM
+      socket.on('DM', (data) => {
+        const div = document.createElement('div');
+        const span = document.createElement('span');
+
+        const { fromNickName, msg } = data;
+
+        if (myNickName === fromNickName) {
+          div.className = 'my-chat';
+        } else {
+          div.className = 'other-chat';
+        }
+
+        span.textContent = `(귓속말) ${fromNickName} : ${msg}`;
+        span.className = 'dm-chat';
+        div.append(span);
+        chatList.append(div);
+      });
+
+      // 입력한 닉네임으로 입장 성공
+      socket.on('entrySuccess', (nickName) => {
+        myNickName = nickName;
+        document.querySelector('#nickName').disabled = true;
+        document.querySelector('.entry-box > button').disabled = true;
+        chatBox.style.display = 'block';
+      });
+
+      // 유저 목록 업데이트
+      socket.on('updateNicks', (nickNameObj) => {
+        let options = `<option value='all'>전체</option>`;
+
+        for (let [socketId, nickName] of Object.entries(nickNameObj)) {
+          options += `<option value=${socketId}>${nickName}</option>`;
+        }
+
+        document.querySelector('#nick-list').innerHTML = options;
+      });
+
+      socket.on('disconnect', (myNickName) => {});
+    </script>
+  </body>
+</html>
