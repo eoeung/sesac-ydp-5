@@ -185,7 +185,10 @@
       const inputMsg = document.querySelector('#input-msg');
       const chatList = document.querySelector('.chat-list');
 
-      const socket = io.connect('http://localhost:7777');
+      // 로컬
+      // const socket = io.connect('http://localhost:7777');
+      // 배포
+      const socket = io.connect('http://13.124.147.68:7777');
       socket.on('connect', () => {
         console.log('클라이언트 연결 완료 ::: ', socket.id);
       });
