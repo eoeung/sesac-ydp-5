@@ -1,14 +1,74 @@
 # sesac-ydp-5
 
-새싹 레포지토리
-
-- 작성자: eoeung
-- 교육일정: 23.07.17 ~ 24.01.19
-- 나의 다짐: 열심히 해보자
+<div align="center">
 
 <br>
 
-## [배운 내용]
+## 💬 About This Repository
+
+<br>
+
+<!-- 한글 소개 -->
+<p>
+<h3>Node.js & Express & React 웹 풀스택 과정</h3>
+
+|제목|내용|
+|:---:|:---:|
+|교육일정|23.07.17 ~ 24.01.19|
+|다짐|열심히 해보자|
+</p>
+
+<br>
+<br>
+
+## 🔨 Stacks
+
+<div>
+  <br>
+   <!-- Language -->
+    <p><strong>Language</strong></p>
+    <div>
+        <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black"> 
+    </div>
+   </br>
+   <!-- Front-end -->
+   <p><strong>Front-end</strong></p>
+    <div>
+        <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+        <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+        <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> 
+        <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
+    </div>
+   </br>
+    <!-- Framework -->
+    <p><strong>Framework</strong></p>
+    <div>
+        <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white"> 
+        <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=Express&logoColor=white">
+    </div>
+   <br>
+    <!-- Database -->
+    <p><strong>Database</strong></p>
+    <div>
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+    </div>
+   <br>
+    <!-- Cloud -->
+    <p><strong>Cloud</strong></p>
+    <div>
+        <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon aws&logoColor=ec912d"> 
+    </div>
+     <br>
+    <p><strong>ETC</strong></p>
+    <div>
+        <img src="https://img.shields.io/badge/Sequelize-ffffff?style=for-the-badge&logo=Sequelize&logoColor=52b0e7"> 
+    </div>
+</div>
+
+<br>
+<br>
+
+## 📖 배운 내용
 
 |날짜|목차|링크|
 |:---:|:---:|:---:|
@@ -42,3 +102,4 @@
 |23/10/23 ~ 11/10|2차 팀 프로젝트|[2차 프로젝트 이동](https://github.com/SesacProjectTeamA-2/pj-back)|
 |23/11/13|WebSocket|[WebSocket 이동](./35.websocket/)|
 |23/11/15|Socket.io|[Socket.io 이동](./36.socketio/)|
+</div>
