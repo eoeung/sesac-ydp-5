@@ -62,6 +62,7 @@
     <p><strong>ETC</strong></p>
     <div>
         <img src="https://img.shields.io/badge/Sequelize-ffffff?style=for-the-badge&logo=Sequelize&logoColor=52b0e7"> 
+        <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=fefefe"> 
     </div>
 </div>
 
