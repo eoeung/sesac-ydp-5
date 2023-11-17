@@ -10,6 +10,7 @@ const io = socketIO(server, {
     origin: [
       `http://localhost:7777`, // 로컬
       `http://13.124.147.68:7777`, // 배포
+      `http://motimates.xyz:7777`, // 배포 도메인
     ],
     methods: ['GET', 'POST'],
   },
