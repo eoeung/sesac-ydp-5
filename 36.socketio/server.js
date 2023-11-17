@@ -4,7 +4,16 @@ const socketIO = require('socket.io');
 
 const app = express();
 const server = http.createServer(app); // express 앱으로 http 서버를 생성
-const io = socketIO(server); // socket.io를 http 서버에 연결
+const io = socketIO(server, {
+  cors: {
+    // 신뢰할 수 있는 사이트 등록
+    origin: [
+      `http://localhost:7777`, // 로컬
+      `http://13.124.147.68:7777`, // 배포
+    ],
+    methods: ['GET', 'POST'],
+  },
+}); // socket.io를 http 서버에 연결
 const PORT = 7777;
 
 app.set('view engine', 'ejs');
