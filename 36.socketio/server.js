@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 const app = express();
 const server = http.createServer(app); // express 앱으로 http 서버를 생성
 const io = socketIO(server); // socket.io를 http 서버에 연결
-const PORT = 8080;
+const PORT = 7777;
 
 app.set('view engine', 'ejs');
 

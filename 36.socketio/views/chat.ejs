@@ -12,7 +12,8 @@
       }
       .chat-list {
         background-color: #333;
-        min-height: 500px;
+        height: 500px;
+        overflow-y: auto;
       }
       .my-chat {
         text-align: right;
@@ -88,6 +89,7 @@
         onkeypress="if(window.event.keyCode==13){join()}"
       />
       <button onclick="join();">입장</button>
+      <p id="notice-nickname" style="color: #f00"></p>
     </div>
 
     <!-- [실습 2] 채팅 UI -->
@@ -102,46 +104,74 @@
         </div> -->
       </div>
 
-      <select id="nick-list"></select
-      >에게
-      <input
-        type="text"
-        id="input-msg"
-        placeholder="메시지를 입력해주세요."
-        onkeypress="if(window.event.keyCode==13){emitMsg()}"
-      />
-      <button onclick="emitMsg();">전송</button>
+      <div>
+        <select id="nick-list"></select
+        >에게
+        <input
+          type="text"
+          id="input-msg"
+          placeholder="메시지를 입력해주세요."
+          onkeypress="if(window.event.keyCode==13){emitMsg()}"
+        />
+        <button onclick="emitMsg();">전송</button>
+        <p id="notice-msg" style="color: #f00"></p>
+      </div>
     </main>
 
     <script>
       // [실습 4] 채팅창 메시지 전송 - 닉네임 설정
       function join() {
         nickName = document.querySelector('#nickName').value;
+        if (nickName.length < 1) {
+          document.querySelector('#notice-nickname').textContent =
+            '닉네임은 최소 1글자 이상 적어주세요.';
+          return;
+        } else {
+          document.querySelector('#notice-nickname').textContent = '';
+        }
         socket.emit('setNickName', nickName);
       }
 
       // [실습 4] 채팅창 메시지 전송 - 채팅 메시지
       function emitMsg() {
-        const selectedNickName = document.querySelector(
+        const selectedSocketId = document.querySelector(
           '#nick-list option:checked'
         ).value;
+        const selectedNickName = document.querySelector(
+          '#nick-list option:checked'
+        ).text;
 
-        if (selectedNickName !== 'all') {
-          socket.emit('DM', {
-            toSocketId: selectedNickName,
-            fromNickName: myNickName,
-            msg: inputMsg.value,
-          });
+        if (inputMsg.value.length < 1) {
+          document.querySelector('#notice-msg').textContent =
+            '최소 1글자 이상 대화를 입력해주세요.';
+          return;
+        } else {
+          document.querySelector('#notice-msg').textContent = '';
+        }
 
-          const div = document.createElement('div');
-          const span = document.createElement('span');
+        if (selectedSocketId !== 'all') {
+          // 자기 자신에게 하는 DM 막기
+          if (selectedNickName === myNickName) {
+            document.querySelector('#notice-msg').textContent =
+              '자기 자신에게는 귓속말을 보낼 수 없습니다.';
+            return;
+          } else {
+            socket.emit('DM', {
+              toSocketId: selectedSocketId,
+              fromNickName: myNickName,
+              msg: inputMsg.value,
+            });
 
-          div.className = 'my-chat';
+            const div = document.createElement('div');
+            const span = document.createElement('span');
 
-          span.textContent = `(귓속말) ${myNickName} : ${inputMsg.value}`;
-          span.className = 'dm-chat';
-          div.append(span);
-          chatList.append(div);
+            div.className = 'my-chat';
+
+            span.textContent = `(귓속말) ${selectedNickName} 님에게 : ${inputMsg.value}`;
+            span.className = 'dm-chat';
+            div.append(span);
+            chatList.append(div);
+          }
         } else {
           // socket.emit('message', { who: socket.id, msg: inputMsg.value });
           socket.emit('message', { nickName: myNickName, msg: inputMsg.value });
@@ -155,7 +185,7 @@
       const inputMsg = document.querySelector('#input-msg');
       const chatList = document.querySelector('.chat-list');
 
-      const socket = io.connect('http://localhost:8080');
+      const socket = io.connect('http://localhost:7777');
       socket.on('connect', () => {
         console.log('클라이언트 연결 완료 ::: ', socket.id);
       });
@@ -194,6 +224,8 @@
         span.textContent = `${nickName} : ${msg}`;
         div.append(span);
         chatList.append(div);
+        // 메시지가 많아져서 스크롤이 생겨도, 하단에 고정
+        chatList.scrollTop = chatList.scrollHeight;
       });
 
       // DM
@@ -209,10 +241,12 @@
           div.className = 'other-chat';
         }
 
-        span.textContent = `(귓속말) ${fromNickName} : ${msg}`;
+        span.textContent = `(귓속말) ${fromNickName} 님으로부터 : ${msg}`;
         span.className = 'dm-chat';
         div.append(span);
         chatList.append(div);
+        // 메시지가 많아져서 스크롤이 생겨도, 하단에 고정
+        chatList.scrollTop = chatList.scrollHeight;
       });
 
       // 입력한 닉네임으로 입장 성공
@@ -228,6 +262,9 @@
         let options = `<option value='all'>전체</option>`;
 
         for (let [socketId, nickName] of Object.entries(nickNameObj)) {
+          if(nickName === myNickName){
+            continue;
+          }
           options += `<option value=${socketId}>${nickName}</option>`;
         }
 

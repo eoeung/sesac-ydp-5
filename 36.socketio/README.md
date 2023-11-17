@@ -16,6 +16,7 @@
     - 자동 재연결
   - 기본 이벤트
     - connection
+      > ※ 클라이언트 측에서는 connect로 해야함
     - disconnect
     - disconnecting
     - error
