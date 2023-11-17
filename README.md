@@ -2,8 +2,6 @@
 
 <div align="center">
 
-<br>
-
 ## 💬 About This Repository
 
 <br>
