@@ -30,40 +30,51 @@
     <div>
         <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black"> 
     </div>
-   </br>
+    
+   <br>
+
    <!-- Front-end -->
    <p><strong>Front-end</strong></p>
-    <div>
+   <div>
         <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
         <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
         <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> 
         <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
-    </div>
-   </br>
-    <!-- Framework -->
-    <p><strong>Framework</strong></p>
-    <div>
+   </div>
+
+   <br>
+
+   <!-- Framework -->
+   <p><strong>Framework</strong></p>
+   <div>
         <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white"> 
         <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=Express&logoColor=white">
-    </div>
+   </div>
+
    <br>
-    <!-- Database -->
-    <p><strong>Database</strong></p>
-    <div>
+
+   <!-- Database -->
+   <p><strong>Database</strong></p>
+   <div>
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-    </div>
+   </div>
+
    <br>
-    <!-- Cloud -->
-    <p><strong>Cloud</strong></p>
-    <div>
+
+   <!-- Cloud -->
+   <p><strong>Cloud</strong></p>
+   <div>
         <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon aws&logoColor=ec912d"> 
-    </div>
-     <br>
-    <p><strong>ETC</strong></p>
-    <div>
+   </div>
+
+   <br>
+
+   <!-- ETC -->
+   <p><strong>ETC</strong></p>
+   <div>
         <img src="https://img.shields.io/badge/Sequelize-ffffff?style=for-the-badge&logo=Sequelize&logoColor=52b0e7"> 
         <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=fefefe"> 
-    </div>
+   </div>
 </div>
 
 <br>
